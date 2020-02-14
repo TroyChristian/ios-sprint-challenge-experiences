@@ -183,18 +183,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-K4-thC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-K4-thC">
                                 <rect key="frame" x="20" y="103" width="374" height="307"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcU-LM-5ws">
-                                <rect key="frame" x="20" y="443" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcU-LM-5ws">
+                                <rect key="frame" x="20" y="442.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-vv-2aj">
-                                <rect key="frame" x="20" y="502" width="341" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-vv-2aj">
+                                <rect key="frame" x="20" y="501.5" width="341" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wby-x9-Dmh">
                                         <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
@@ -218,19 +216,35 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znI-kv-l44">
-                                <rect key="frame" x="20" y="602" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znI-kv-l44">
+                                <rect key="frame" x="20" y="601.5" width="47" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-zV-wn2">
-                                <rect key="frame" x="18" y="682" width="345" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-zV-wn2">
+                                <rect key="frame" x="18" y="681" width="345" height="31"/>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fcU-LM-5ws" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="6CX-cU-h6M"/>
+                            <constraint firstItem="jO3-vv-2aj" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="BSP-Eb-w5p"/>
+                            <constraint firstItem="kfn-K4-thC" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="BvJ-wF-nhG"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="jO3-vv-2aj" secondAttribute="trailing" constant="53" id="H8q-oa-Qdw"/>
+                            <constraint firstItem="MGC-zV-wn2" firstAttribute="top" secondItem="znI-kv-l44" secondAttribute="bottom" constant="59" id="K7b-15-Mc7"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="znI-kv-l44" secondAttribute="trailing" constant="347" id="L1v-lK-Ibc"/>
+                            <constraint firstItem="znI-kv-l44" firstAttribute="top" secondItem="jO3-vv-2aj" secondAttribute="bottom" constant="70" id="WRd-xa-3wc"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="fcU-LM-5ws" secondAttribute="trailing" constant="20" id="X7L-WW-Sg3"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="bottom" secondItem="MGC-zV-wn2" secondAttribute="bottom" constant="151" id="Zg4-xS-EXo"/>
+                            <constraint firstItem="MGC-zV-wn2" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="eUL-IK-gLa"/>
+                            <constraint firstItem="fcU-LM-5ws" firstAttribute="top" secondItem="kfn-K4-thC" secondAttribute="bottom" constant="33" id="gi4-HU-mrL"/>
+                            <constraint firstItem="jO3-vv-2aj" firstAttribute="top" secondItem="fcU-LM-5ws" secondAttribute="bottom" constant="25" id="hfe-3g-2wM"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="MGC-zV-wn2" secondAttribute="trailing" constant="53" id="k4B-L4-rN5"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="kfn-K4-thC" secondAttribute="trailing" constant="20" id="o9a-Kn-1iL"/>
+                            <constraint firstItem="znI-kv-l44" firstAttribute="top" secondItem="jO3-vv-2aj" secondAttribute="bottom" constant="70" id="pid-pV-TFv"/>
+                            <constraint firstItem="znI-kv-l44" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="wnI-4V-7Ea"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1TP-JW-cGB"/>
                     </view>
                 </viewController>
