@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol AudioViewControllerDelegate {
+    func addAudioButtonTapped() 
+    
+}
+
 class AudioViewController: UIViewController {
+    var experienceController: ExperienceController?
+    var delegate: AudioViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

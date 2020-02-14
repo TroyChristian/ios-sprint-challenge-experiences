@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol VideoViewControllerDelegate {
+    func addVideoButtonTapped()
+}
+
 class VideoViewController: UIViewController {
+    var experienceController: ExperienceController?
+    var delegate: VideoViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

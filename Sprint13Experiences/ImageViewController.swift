@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol ImageViewControllerDelegate {
+   func addImageButtonTapped() 
+    
+    
+}
+
 class ImageViewController: UIViewController {
+    var experienceController: ExperienceController?
+    var delegate: ImageViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
