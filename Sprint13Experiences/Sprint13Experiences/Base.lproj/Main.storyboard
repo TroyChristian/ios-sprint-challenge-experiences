@@ -149,14 +149,21 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
+                                <rect key="frame" x="155" y="575" width="105" height="30"/>
+                                <state key="normal" title="Playback Audio"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ort-QA-mgE" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="126" id="AIL-br-ige"/>
+                            <constraint firstItem="mEy-aD-Vwd" firstAttribute="top" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="69" id="N6f-cN-9qp"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="ort-QA-mgE" secondAttribute="trailing" constant="125" id="ajC-4B-idU"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="fcE-fv-3ff"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="356" id="hBg-gM-IbH"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="hLq-cX-zdS"/>
+                            <constraint firstItem="mEy-aD-Vwd" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="155" id="i8Y-wy-eXn"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="mEy-aD-Vwd" secondAttribute="trailing" constant="154" id="inY-1N-rXz"/>
                             <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="m6r-4g-BI8"/>
                             <constraint firstItem="TyK-Xq-fVR" firstAttribute="top" secondItem="ort-QA-mgE" secondAttribute="bottom" constant="133" id="s8s-vb-xtE"/>
                             <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="yvs-QH-v3O"/>
