@@ -44,26 +44,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title your video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfF-CZ-U4d">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title your video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfF-CZ-U4d">
                                 <rect key="frame" x="20" y="114" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-bQ-0Jf" customClass="CameraPreviewView" customModule="Sprint13Experiences" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-bQ-0Jf" customClass="CameraPreviewView" customModule="Sprint13Experiences" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red">
                                 <rect key="frame" x="20" y="156" width="374" height="491"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPr-hq-0sa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPr-hq-0sa">
                                 <rect key="frame" x="149" y="697" width="116" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button" image="Record"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FfF-CZ-U4d" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="20" id="HOg-iA-fIZ"/>
+                            <constraint firstItem="b5g-bQ-0Jf" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="20" id="L0o-OX-AXg"/>
+                            <constraint firstItem="bKd-FV-PoC" firstAttribute="bottom" secondItem="YPr-hq-0sa" secondAttribute="bottom" constant="49" id="egP-sY-CJP"/>
+                            <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="FfF-CZ-U4d" secondAttribute="trailing" constant="20" id="enO-cW-FjH"/>
+                            <constraint firstItem="b5g-bQ-0Jf" firstAttribute="top" secondItem="FfF-CZ-U4d" secondAttribute="bottom" constant="8" id="fGf-Xb-RPn"/>
+                            <constraint firstItem="FfF-CZ-U4d" firstAttribute="top" secondItem="bKd-FV-PoC" secondAttribute="top" constant="70" id="fKq-ot-16N"/>
+                            <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="YPr-hq-0sa" secondAttribute="trailing" constant="149" id="hWw-Mz-Z8C"/>
+                            <constraint firstItem="YPr-hq-0sa" firstAttribute="top" secondItem="b5g-bQ-0Jf" secondAttribute="bottom" constant="50" id="l4F-OE-SzA"/>
+                            <constraint firstItem="YPr-hq-0sa" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="149" id="q67-C5-dJc"/>
+                            <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="b5g-bQ-0Jf" secondAttribute="trailing" constant="20" id="qih-Wh-bED"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bKd-FV-PoC"/>
                     </view>
                 </viewController>
