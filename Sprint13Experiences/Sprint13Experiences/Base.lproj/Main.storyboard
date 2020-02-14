@@ -41,20 +41,20 @@
             <objects>
                 <viewController title="VideoViewController" id="ACL-Bb-NkN" customClass="VideoViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SW2-Lt-CNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title your video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfF-CZ-U4d">
-                                <rect key="frame" x="20" y="114" width="374" height="34"/>
+                                <rect key="frame" x="20" y="70" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-bQ-0Jf" customClass="CameraPreviewView" customModule="Sprint13Experiences" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="20" y="156" width="374" height="491"/>
+                                <rect key="frame" x="20" y="112" width="374" height="481"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPr-hq-0sa">
-                                <rect key="frame" x="149" y="697" width="116" height="116"/>
+                                <rect key="frame" x="149" y="643" width="116" height="116"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button" image="Record"/>
@@ -115,6 +115,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="ACL-Bb-NkN" kind="presentation" identifier="VideoSegue" id="Twp-pw-c2K"/>
+                        <segue destination="T0c-Gh-jpx" kind="presentation" customClass="AudioSegue" id="0Hv-3A-WxR"/>
+                        <segue destination="MI3-zJ-ekU" kind="presentation" identifier="ImageSegue" id="FfM-nc-9Fo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhA-Sq-Xp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,17 +130,17 @@
             <objects>
                 <viewController title="AudioViewController" id="T0c-Gh-jpx" customClass="AudioViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ZF-18-11G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ort-QA-mgE">
-                                <rect key="frame" x="126" y="313" width="163" height="30"/>
+                                <rect key="frame" x="126" y="259" width="163" height="30"/>
                                 <state key="normal" title="Record Audio Comment">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="TyK-Xq-fVR">
-                                <rect key="frame" x="50" y="476" width="314" height="30"/>
+                                <rect key="frame" x="50" y="422" width="314" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHa-ws-kUO" userLabel="Time Elapsed Label">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
@@ -155,7 +160,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
-                                <rect key="frame" x="155" y="575" width="105" height="30"/>
+                                <rect key="frame" x="155" y="521" width="105" height="30"/>
                                 <state key="normal" title="Playback Audio"/>
                             </button>
                         </subviews>
@@ -185,19 +190,19 @@
             <objects>
                 <viewController title="ImageViewController" id="MI3-zJ-ekU" customClass="ImageViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2VJ-JI-8Eg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-K4-thC">
-                                <rect key="frame" x="20" y="103" width="374" height="306.5"/>
+                                <rect key="frame" x="20" y="59" width="374" height="296.5"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcU-LM-5ws">
-                                <rect key="frame" x="20" y="442.5" width="374" height="34"/>
+                                <rect key="frame" x="20" y="388.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-vv-2aj">
-                                <rect key="frame" x="20" y="501.5" width="341" height="30"/>
+                                <rect key="frame" x="20" y="447.5" width="341" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wby-x9-Dmh">
                                         <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
@@ -222,13 +227,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znI-kv-l44">
-                                <rect key="frame" x="20" y="601.5" width="47" height="20.5"/>
+                                <rect key="frame" x="20" y="547.5" width="47" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-zV-wn2">
-                                <rect key="frame" x="18" y="681" width="345" height="31"/>
+                                <rect key="frame" x="18" y="627" width="345" height="31"/>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

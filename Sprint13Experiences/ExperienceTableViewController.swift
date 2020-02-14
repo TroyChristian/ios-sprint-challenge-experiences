@@ -10,7 +10,7 @@ import UIKit
 
 class ExperienceTableViewController: UITableViewController {
     var experienceController = ExperienceController() // the instance that the app should share.
-    var throwaway = 6 //for commit and pull
+   
     
   
 
@@ -27,9 +27,28 @@ class ExperienceTableViewController: UITableViewController {
     }
     
     private func addExperience() {
+        let alert = UIAlertController(title: "New Experience", message: "What kind of experience are you creating?", preferredStyle: .actionSheet)
+        
+        let videoAlertAction = UIAlertAction(title: "Video", style: .default) { (_) in
+            self.performSegue(withIdentifier: "VideoSegue", sender: nil) }
+        
+        let audioAlertAction = UIAlertAction(title: "Audio", style: .default) { (_) in
+        self.performSegue(withIdentifier: "AudioSegue", sender: nil) }
+        
+        let imageAlertAction = UIAlertAction(title: "ImageSegue", style: .default) { (_) in
+        self.performSegue(withIdentifier: "ImageSegue", sender: nil) }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(videoAlertAction)
+        alert.addAction(audioAlertAction)
+        alert.addAction(imageAlertAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated:true, completion: nil) 
         
     }
-    // MARK: - Table view data source
+        
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
