@@ -222,25 +222,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-vv-2aj">
                                 <rect key="frame" x="20" y="501.5" width="341" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wby-x9-Dmh">
-                                        <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wby-x9-Dmh">
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="30"/>
                                         <state key="normal" title="Sepia"/>
+                                        <connections>
+                                            <action selector="sepiaButtonTapped:" destination="MI3-zJ-ekU" eventType="touchUpInside" id="6YX-OL-EHP"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoZ-o3-Hxo">
-                                        <rect key="frame" x="75" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="B/W"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WX-lY-eSo">
-                                        <rect key="frame" x="141" y="0.0" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WX-lY-eSo">
+                                        <rect key="frame" x="217" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Blur"/>
+                                        <connections>
+                                            <action selector="blurButtonTapped:" destination="MI3-zJ-ekU" eventType="touchUpInside" id="1Hv-HC-14o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwF-Mq-ZUa">
-                                        <rect key="frame" x="207" y="0.0" width="58" height="30"/>
+                                        <rect key="frame" x="283" y="0.0" width="58" height="30"/>
                                         <state key="normal" title="Sharpen"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2z-OM-wNo">
-                                        <rect key="frame" x="301" y="0.0" width="40" height="30"/>
-                                        <state key="normal" title="Invert"/>
+                                        <connections>
+                                            <action selector="sharpenButtonTapped:" destination="MI3-zJ-ekU" eventType="touchUpInside" id="AKE-iq-T6P"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -252,31 +253,66 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-zV-wn2">
                                 <rect key="frame" x="18" y="681" width="345" height="31"/>
+                                <connections>
+                                    <action selector="valueSliderChanged:" destination="MI3-zJ-ekU" eventType="valueChanged" id="ebg-5N-Mzu"/>
+                                </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Geotag?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvh-bR-i9A">
+                                <rect key="frame" x="22" y="781" width="99.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-FQ-Dyq">
+                                <rect key="frame" x="310" y="781" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ8-Bl-PqX">
+                                <rect key="frame" x="149" y="303" width="116" height="30"/>
+                                <state key="normal" title="Upload an Image"/>
+                                <connections>
+                                    <action selector="chooseImage:" destination="MI3-zJ-ekU" eventType="touchUpInside" id="TaZ-rv-IKr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="eQ8-Bl-PqX" firstAttribute="top" secondItem="1TP-JW-cGB" secondAttribute="top" constant="215" id="0Gg-d1-qu9"/>
                             <constraint firstItem="fcU-LM-5ws" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="6CX-cU-h6M"/>
                             <constraint firstItem="kfn-K4-thC" firstAttribute="top" secondItem="1TP-JW-cGB" secondAttribute="top" constant="59" id="AO5-Hg-pVj"/>
                             <constraint firstItem="jO3-vv-2aj" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="BSP-Eb-w5p"/>
+                            <constraint firstItem="eQ8-Bl-PqX" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="149" id="BpF-Hl-Hlk"/>
                             <constraint firstItem="kfn-K4-thC" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="BvJ-wF-nhG"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="bottom" secondItem="G6w-FQ-Dyq" secondAttribute="bottom" constant="50" id="G3T-sN-hJQ"/>
                             <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="jO3-vv-2aj" secondAttribute="trailing" constant="53" id="H8q-oa-Qdw"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="G6w-FQ-Dyq" secondAttribute="trailing" constant="55" id="I9a-bv-Lak"/>
                             <constraint firstItem="MGC-zV-wn2" firstAttribute="top" secondItem="znI-kv-l44" secondAttribute="bottom" constant="59" id="K7b-15-Mc7"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="eQ8-Bl-PqX" secondAttribute="trailing" constant="149" id="KXG-Lx-pva"/>
                             <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="znI-kv-l44" secondAttribute="trailing" constant="347" id="L1v-lK-Ibc"/>
                             <constraint firstItem="znI-kv-l44" firstAttribute="top" secondItem="jO3-vv-2aj" secondAttribute="bottom" constant="70" id="WRd-xa-3wc"/>
                             <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="fcU-LM-5ws" secondAttribute="trailing" constant="20" id="X7L-WW-Sg3"/>
                             <constraint firstItem="1TP-JW-cGB" firstAttribute="bottom" secondItem="MGC-zV-wn2" secondAttribute="bottom" constant="151" id="Zg4-xS-EXo"/>
+                            <constraint firstItem="1TP-JW-cGB" firstAttribute="bottom" secondItem="Cvh-bR-i9A" secondAttribute="bottom" constant="60" id="eJT-wt-mxf"/>
                             <constraint firstItem="MGC-zV-wn2" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="eUL-IK-gLa"/>
+                            <constraint firstItem="Cvh-bR-i9A" firstAttribute="top" secondItem="MGC-zV-wn2" secondAttribute="bottom" constant="70" id="fG3-RC-NWd"/>
+                            <constraint firstItem="G6w-FQ-Dyq" firstAttribute="top" secondItem="MGC-zV-wn2" secondAttribute="bottom" constant="70" id="gIr-yr-e1T"/>
                             <constraint firstItem="fcU-LM-5ws" firstAttribute="top" secondItem="kfn-K4-thC" secondAttribute="bottom" constant="33" id="gi4-HU-mrL"/>
                             <constraint firstItem="jO3-vv-2aj" firstAttribute="top" secondItem="fcU-LM-5ws" secondAttribute="bottom" constant="25" id="hfe-3g-2wM"/>
                             <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="MGC-zV-wn2" secondAttribute="trailing" constant="53" id="k4B-L4-rN5"/>
                             <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="kfn-K4-thC" secondAttribute="trailing" constant="20" id="o9a-Kn-1iL"/>
                             <constraint firstItem="znI-kv-l44" firstAttribute="top" secondItem="jO3-vv-2aj" secondAttribute="bottom" constant="70" id="pid-pV-TFv"/>
+                            <constraint firstItem="Cvh-bR-i9A" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="22" id="qnp-bC-CTm"/>
                             <constraint firstItem="znI-kv-l44" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="wnI-4V-7Ea"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1TP-JW-cGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="WOX-7O-Bm3"/>
+                    <connections>
+                        <outlet property="chooseImageButton" destination="eQ8-Bl-PqX" id="j96-hc-mpn"/>
+                        <outlet property="imageTitleTextField" destination="fcU-LM-5ws" id="1ai-K6-BQu"/>
+                        <outlet property="imageView" destination="kfn-K4-thC" id="azE-Af-nfw"/>
+                        <outlet property="valueLabel" destination="znI-kv-l44" id="c8w-FS-oPt"/>
+                        <outlet property="valueSlider" destination="MGC-zV-wn2" id="ZBm-9l-LSU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeU-Fx-FTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
