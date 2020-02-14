@@ -16,6 +16,8 @@
 		FB5F3DF223F709E4001B9899 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */; };
 		FB5F3DF523F71868001B9899 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DF423F71868001B9899 /* Experience.swift */; };
 		FB5F3DF823F719D4001B9899 /* ExperienceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DF723F719D4001B9899 /* ExperienceController.swift */; };
+		FB5F3DFB23F71BB9001B9899 /* Experience+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DFA23F71BB9001B9899 /* Experience+MKAnnotation.swift */; };
+		FB5F3DFD23F71BCE001B9899 /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DFC23F71BCE001B9899 /* UIImage+Scaling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		FB5F3DF423F71868001B9899 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		FB5F3DF723F719D4001B9899 /* ExperienceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceController.swift; sourceTree = "<group>"; };
+		FB5F3DFA23F71BB9001B9899 /* Experience+MKAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience+MKAnnotation.swift"; sourceTree = "<group>"; };
+		FB5F3DFC23F71BCE001B9899 /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,18 @@
 			isa = PBXGroup;
 			children = (
 				FB5F3DF723F719D4001B9899 /* ExperienceController.swift */,
+				FB5F3DF923F71B8A001B9899 /* Helpers */,
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		FB5F3DF923F71B8A001B9899 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FB5F3DFA23F71BB9001B9899 /* Experience+MKAnnotation.swift */,
+				FB5F3DFC23F71BCE001B9899 /* UIImage+Scaling.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +196,11 @@
 			files = (
 				FB5F3DDA23F70249001B9899 /* AppDelegate.swift in Sources */,
 				FB5F3DDC23F70249001B9899 /* SceneDelegate.swift in Sources */,
+				FB5F3DFB23F71BB9001B9899 /* Experience+MKAnnotation.swift in Sources */,
 				FB5F3DF223F709E4001B9899 /* CameraPreviewView.swift in Sources */,
 				FB5F3DF523F71868001B9899 /* Experience.swift in Sources */,
 				FB5F3DF823F719D4001B9899 /* ExperienceController.swift in Sources */,
+				FB5F3DFD23F71BCE001B9899 /* UIImage+Scaling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
