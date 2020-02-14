@@ -122,7 +122,45 @@
                     <view key="view" contentMode="scaleToFill" id="0ZF-18-11G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ort-QA-mgE">
+                                <rect key="frame" x="126" y="313" width="163" height="30"/>
+                                <state key="normal" title="Record Audio Comment">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="TyK-Xq-fVR">
+                                <rect key="frame" x="50" y="476" width="314" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHa-ws-kUO" userLabel="Time Elapsed Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="31J-YK-Jfz" userLabel="AudioSlider">
+                                        <rect key="frame" x="94" y="0.0" width="126" height="31"/>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJL-Fu-jZB" userLabel="Time Remaining Label">
+                                        <rect key="frame" x="268" y="0.0" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ort-QA-mgE" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="126" id="AIL-br-ige"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="ort-QA-mgE" secondAttribute="trailing" constant="125" id="ajC-4B-idU"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="fcE-fv-3ff"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="356" id="hBg-gM-IbH"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="hLq-cX-zdS"/>
+                            <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="m6r-4g-BI8"/>
+                            <constraint firstItem="TyK-Xq-fVR" firstAttribute="top" secondItem="ort-QA-mgE" secondAttribute="bottom" constant="133" id="s8s-vb-xtE"/>
+                            <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="yvs-QH-v3O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xwu-e4-PUh"/>
                     </view>
                 </viewController>
