@@ -13,6 +13,7 @@
 		FB5F3DE323F7024F001B9899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5F3DE223F7024F001B9899 /* Assets.xcassets */; };
 		FB5F3DE623F7024F001B9899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5F3DE423F7024F001B9899 /* LaunchScreen.storyboard */; };
 		FB5F3DEF23F70264001B9899 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5F3DEE23F70264001B9899 /* MapKit.framework */; };
+		FB5F3DF223F709E4001B9899 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FB5F3DE523F7024F001B9899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB5F3DE723F7024F001B9899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB5F3DEE23F70264001B9899 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		FB5F3DD823F70249001B9899 /* Sprint13Experiences */ = {
 			isa = PBXGroup;
 			children = (
+				FB5F3DF023F709BF001B9899 /* Views */,
 				FB5F3DD923F70249001B9899 /* AppDelegate.swift */,
 				FB5F3DDB23F70249001B9899 /* SceneDelegate.swift */,
 				FB5F3DDF23F70249001B9899 /* Main.storyboard */,
@@ -74,6 +77,14 @@
 				FB5F3DEE23F70264001B9899 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB5F3DF023F709BF001B9899 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			files = (
 				FB5F3DDA23F70249001B9899 /* AppDelegate.swift in Sources */,
 				FB5F3DDC23F70249001B9899 /* SceneDelegate.swift in Sources */,
+				FB5F3DF223F709E4001B9899 /* CameraPreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
