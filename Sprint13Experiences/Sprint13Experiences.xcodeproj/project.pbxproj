@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FB5F3DDA23F70249001B9899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DD923F70249001B9899 /* AppDelegate.swift */; };
 		FB5F3DDC23F70249001B9899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DDB23F70249001B9899 /* SceneDelegate.swift */; };
-		FB5F3DDE23F70249001B9899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DDD23F70249001B9899 /* ViewController.swift */; };
 		FB5F3DE123F70249001B9899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5F3DDF23F70249001B9899 /* Main.storyboard */; };
 		FB5F3DE323F7024F001B9899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5F3DE223F7024F001B9899 /* Assets.xcassets */; };
 		FB5F3DE623F7024F001B9899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5F3DE423F7024F001B9899 /* LaunchScreen.storyboard */; };
@@ -20,7 +19,6 @@
 		FB5F3DD623F70249001B9899 /* Sprint13Experiences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprint13Experiences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5F3DD923F70249001B9899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB5F3DDB23F70249001B9899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB5F3DDD23F70249001B9899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB5F3DE023F70249001B9899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB5F3DE223F7024F001B9899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB5F3DE523F7024F001B9899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				FB5F3DD923F70249001B9899 /* AppDelegate.swift */,
 				FB5F3DDB23F70249001B9899 /* SceneDelegate.swift */,
-				FB5F3DDD23F70249001B9899 /* ViewController.swift */,
 				FB5F3DDF23F70249001B9899 /* Main.storyboard */,
 				FB5F3DE223F7024F001B9899 /* Assets.xcassets */,
 				FB5F3DE423F7024F001B9899 /* LaunchScreen.storyboard */,
@@ -150,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB5F3DDE23F70249001B9899 /* ViewController.swift in Sources */,
 				FB5F3DDA23F70249001B9899 /* AppDelegate.swift in Sources */,
 				FB5F3DDC23F70249001B9899 /* SceneDelegate.swift in Sources */,
 			);
