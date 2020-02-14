@@ -14,6 +14,7 @@
 		FB5F3DE623F7024F001B9899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5F3DE423F7024F001B9899 /* LaunchScreen.storyboard */; };
 		FB5F3DEF23F70264001B9899 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5F3DEE23F70264001B9899 /* MapKit.framework */; };
 		FB5F3DF223F709E4001B9899 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */; };
+		FB5F3DF523F71868001B9899 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DF423F71868001B9899 /* Experience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FB5F3DE723F7024F001B9899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB5F3DEE23F70264001B9899 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		FB5F3DF423F71868001B9899 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,17 @@
 			isa = PBXGroup;
 			children = (
 				FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */,
+				FB5F3DF323F71821001B9899 /* Models */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FB5F3DF323F71821001B9899 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB5F3DF423F71868001B9899 /* Experience.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				FB5F3DDA23F70249001B9899 /* AppDelegate.swift in Sources */,
 				FB5F3DDC23F70249001B9899 /* SceneDelegate.swift in Sources */,
 				FB5F3DF223F709E4001B9899 /* CameraPreviewView.swift in Sources */,
+				FB5F3DF523F71868001B9899 /* Experience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

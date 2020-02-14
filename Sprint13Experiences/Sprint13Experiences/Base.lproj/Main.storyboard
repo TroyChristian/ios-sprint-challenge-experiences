@@ -183,8 +183,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-K4-thC">
-                                <rect key="frame" x="20" y="103" width="374" height="307"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-K4-thC">
+                                <rect key="frame" x="20" y="103" width="374" height="306.5"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcU-LM-5ws">
                                 <rect key="frame" x="20" y="442.5" width="374" height="34"/>
@@ -229,6 +229,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fcU-LM-5ws" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="6CX-cU-h6M"/>
+                            <constraint firstItem="kfn-K4-thC" firstAttribute="top" secondItem="1TP-JW-cGB" secondAttribute="top" constant="59" id="AO5-Hg-pVj"/>
                             <constraint firstItem="jO3-vv-2aj" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="BSP-Eb-w5p"/>
                             <constraint firstItem="kfn-K4-thC" firstAttribute="leading" secondItem="1TP-JW-cGB" secondAttribute="leading" constant="20" id="BvJ-wF-nhG"/>
                             <constraint firstItem="1TP-JW-cGB" firstAttribute="trailing" secondItem="jO3-vv-2aj" secondAttribute="trailing" constant="53" id="H8q-oa-Qdw"/>
