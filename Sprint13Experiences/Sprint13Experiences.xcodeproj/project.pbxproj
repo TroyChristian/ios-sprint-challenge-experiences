@@ -20,6 +20,10 @@
 		FB5F3DFD23F71BCE001B9899 /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DFC23F71BCE001B9899 /* UIImage+Scaling.swift */; };
 		FB5F3DFF23F71C5C001B9899 /* UIViewController+InformationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3DFE23F71C5C001B9899 /* UIViewController+InformationAlert.swift */; };
 		FB5F3E0123F72113001B9899 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3E0023F72113001B9899 /* LocationManager.swift */; };
+		FB5F3E0323F7226E001B9899 /* ExperienceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3E0223F7226E001B9899 /* ExperienceTableViewController.swift */; };
+		FB5F3E0623F725C3001B9899 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3E0523F725C3001B9899 /* VideoViewController.swift */; };
+		FB5F3E0823F725D7001B9899 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3E0723F725D7001B9899 /* AudioViewController.swift */; };
+		FB5F3E0A23F725F3001B9899 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F3E0923F725F3001B9899 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		FB5F3DFC23F71BCE001B9899 /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 		FB5F3DFE23F71C5C001B9899 /* UIViewController+InformationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+InformationAlert.swift"; sourceTree = "<group>"; };
 		FB5F3E0023F72113001B9899 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FB5F3E0223F7226E001B9899 /* ExperienceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewController.swift; sourceTree = "<group>"; };
+		FB5F3E0523F725C3001B9899 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		FB5F3E0723F725D7001B9899 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		FB5F3E0923F725F3001B9899 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5F3DF123F709E4001B9899 /* CameraPreviewView.swift */,
+				FB5F3E0423F72283001B9899 /* ViewControllers */,
 				FB5F3DF323F71821001B9899 /* Models */,
 				FB5F3DF623F719B1001B9899 /* ModelControllers */,
 			);
@@ -127,6 +136,18 @@
 				FB5F3E0023F72113001B9899 /* LocationManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FB5F3E0423F72283001B9899 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB5F3E0223F7226E001B9899 /* ExperienceTableViewController.swift */,
+				FB5F3E0523F725C3001B9899 /* VideoViewController.swift */,
+				FB5F3E0723F725D7001B9899 /* AudioViewController.swift */,
+				FB5F3E0923F725F3001B9899 /* ImageViewController.swift */,
+			);
+			name = ViewControllers;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,10 +226,14 @@
 				FB5F3DDC23F70249001B9899 /* SceneDelegate.swift in Sources */,
 				FB5F3DFB23F71BB9001B9899 /* Experience+MKAnnotation.swift in Sources */,
 				FB5F3DF223F709E4001B9899 /* CameraPreviewView.swift in Sources */,
+				FB5F3E0823F725D7001B9899 /* AudioViewController.swift in Sources */,
+				FB5F3E0A23F725F3001B9899 /* ImageViewController.swift in Sources */,
 				FB5F3DF523F71868001B9899 /* Experience.swift in Sources */,
+				FB5F3E0623F725C3001B9899 /* VideoViewController.swift in Sources */,
 				FB5F3DF823F719D4001B9899 /* ExperienceController.swift in Sources */,
 				FB5F3DFD23F71BCE001B9899 /* UIImage+Scaling.swift in Sources */,
 				FB5F3E0123F72113001B9899 /* LocationManager.swift in Sources */,
+				FB5F3E0323F7226E001B9899 /* ExperienceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

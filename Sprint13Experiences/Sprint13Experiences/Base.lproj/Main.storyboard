@@ -39,7 +39,7 @@
         <!--VideoViewController-->
         <scene sceneID="ret-nm-6VB">
             <objects>
-                <viewController title="VideoViewController" id="ACL-Bb-NkN" sceneMemberID="viewController">
+                <viewController title="VideoViewController" id="ACL-Bb-NkN" customClass="VideoViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SW2-Lt-CNQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
         <!--Experiences-->
         <scene sceneID="N9q-tn-Bcs">
             <objects>
-                <tableViewController title="Experiences" id="JSB-hk-g4B" sceneMemberID="viewController">
+                <tableViewController title="Experiences" id="JSB-hk-g4B" customClass="ExperienceTableViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HM1-SD-UJk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,6 +109,11 @@
                                 <segue destination="IaK-cR-KDi" kind="show" id="ozT-kb-iUR"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Experience" id="09z-fu-msI">
+                            <connections>
+                                <action selector="addExperienceTapped:" destination="JSB-hk-g4B" id="sBT-xo-7Ua"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhA-Sq-Xp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,7 +123,7 @@
         <!--AudioViewController-->
         <scene sceneID="Os0-uA-RNO">
             <objects>
-                <viewController title="AudioViewController" id="T0c-Gh-jpx" sceneMemberID="viewController">
+                <viewController title="AudioViewController" id="T0c-Gh-jpx" customClass="AudioViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ZF-18-11G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,7 +183,7 @@
         <!--ImageViewController-->
         <scene sceneID="B9d-1n-PYw">
             <objects>
-                <viewController title="ImageViewController" id="MI3-zJ-ekU" sceneMemberID="viewController">
+                <viewController title="ImageViewController" id="MI3-zJ-ekU" customClass="ImageViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2VJ-JI-8Eg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
