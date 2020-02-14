@@ -6,4 +6,14 @@
 //  Copyright © 2020 Lambda_School_Loaner_219. All rights reserved.
 //
 
-import Foundation
+import MapKit
+
+extension Experience: MKAnnotation {
+    var coordinate: CLLocationCoordinate2D {
+        guard let geotag = geotag else { return CLLocationCoordinate2D()}
+        return CLLocationCoordinate2D(latitude:geotag.latitude, longitude: geotag.longitude)
+    }
+    var experienceTitle: String? {
+        title 
+    }
+}
