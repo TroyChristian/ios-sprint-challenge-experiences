@@ -36,6 +36,21 @@
             </objects>
             <point key="canvasLocation" x="989.85507246376824" y="-1785.2678571428571"/>
         </scene>
+        <!--VideoViewController-->
+        <scene sceneID="ret-nm-6VB">
+            <objects>
+                <viewController title="VideoViewController" id="ACL-Bb-NkN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SW2-Lt-CNQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bKd-FV-PoC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MS2-6m-3Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="-1789"/>
+        </scene>
         <!--Experiences-->
         <scene sceneID="N9q-tn-Bcs">
             <objects>
@@ -70,6 +85,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhA-Sq-Xp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="990" y="-1098"/>
+        </scene>
+        <!--AudioViewController-->
+        <scene sceneID="Os0-uA-RNO">
+            <objects>
+                <viewController title="AudioViewController" id="T0c-Gh-jpx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ZF-18-11G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xwu-e4-PUh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpd-GO-mBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="-1107"/>
+        </scene>
+        <!--ImageViewController-->
+        <scene sceneID="B9d-1n-PYw">
+            <objects>
+                <viewController title="ImageViewController" id="MI3-zJ-ekU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2VJ-JI-8Eg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1TP-JW-cGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeU-Fx-FTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="-460"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KrH-Fm-mLu">
