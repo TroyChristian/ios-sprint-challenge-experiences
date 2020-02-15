@@ -18,6 +18,9 @@ import UIKit
 import AVFoundation
 
 class VideoViewController: UIViewController {
+    
+    //MARK: // PROPERTIES
+    var player: AVPlayer!
     lazy private var captureSession = AVCaptureSession()
     lazy private var fileOutput = AVCaptureMovieFileOutput()
     var delegate: VideoViewControllerDelegate?
@@ -25,9 +28,21 @@ class VideoViewController: UIViewController {
               fileOutput.isRecording
           }
     
+    //MARK: OUTLETS:
     @IBOutlet weak var recordButton: UIButton!
     
     @IBOutlet weak var cameraView: CameraPreviewView!
+    
+    
+    //MARK: ACTIONS:
+    @IBAction func addVideoExperienceButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func recordButtonTapped(_ sender: Any) {
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +116,8 @@ class VideoViewController: UIViewController {
         captureSession.commitConfiguration()
         
         cameraView.session = captureSession
+        
+        
     }
     private func bestCamera() -> AVCaptureDevice {
         // front / back
@@ -143,6 +160,16 @@ class VideoViewController: UIViewController {
         return fileURL
     }
     
+    func playVideo(url: URL) {
+        player = AVPlayer(url: url)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = cameraView.frame
+        playerLayer.videoGravity = .resize
+        view.layer.addSublayer(playerLayer)
+        player?.play()
+    }
+    
+    
     private func updateViews() {
         recordButton.isSelected = isRecording
     }
@@ -152,6 +179,7 @@ class VideoViewController: UIViewController {
 extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
     func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
         updateViews()
+       
         
     }
     
@@ -161,6 +189,7 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
         }
         print("Url: \(outputFileURL.path)")
         updateViews()
+         playVideo(url:outputFileURL)
         
     }
 }

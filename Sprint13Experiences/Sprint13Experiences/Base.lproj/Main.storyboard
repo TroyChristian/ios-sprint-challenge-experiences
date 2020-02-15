@@ -61,6 +61,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button" image="Record"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="ACL-Bb-NkN" eventType="touchUpInside" id="TaF-pv-5IY"/>
+                                    <action selector="recordButtonTapped:" destination="ACL-Bb-NkN" eventType="touchUpInside" id="YrT-jT-I9v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -78,7 +82,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bKd-FV-PoC"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ehw-YF-qxN"/>
+                    <navigationItem key="navigationItem" id="ehw-YF-qxN">
+                        <barButtonItem key="rightBarButtonItem" title="Add Video Experience" id="Txs-uS-x42">
+                            <connections>
+                                <action selector="addVideoExperienceButtonTapped:" destination="ACL-Bb-NkN" id="Uce-cv-Dgl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraView" destination="b5g-bQ-0Jf" id="krC-QX-yIk"/>
                         <outlet property="recordButton" destination="YPr-hq-0sa" id="pRY-IE-iMV"/>
