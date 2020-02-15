@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="jYx-Qq-x0E">
             <objects>
-                <viewController id="IaK-cR-KDi" sceneMemberID="viewController">
+                <viewController id="IaK-cR-KDi" customClass="MapViewController" customModule="Sprint13Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ndF-c5-WC7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +31,9 @@
                         <viewLayoutGuide key="safeArea" id="lfX-t8-6a8"/>
                     </view>
                     <navigationItem key="navigationItem" id="B9p-4g-ke6"/>
+                    <connections>
+                        <outlet property="mapView" destination="axK-cv-OpC" id="tcU-Yw-D48"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pT5-YL-lSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,7 +126,7 @@
                     <navigationItem key="navigationItem" id="DXy-fi-h6q">
                         <barButtonItem key="leftBarButtonItem" title="Map" id="fBk-5M-TfD">
                             <connections>
-                                <segue destination="IaK-cR-KDi" kind="show" id="ozT-kb-iUR"/>
+                                <segue destination="IaK-cR-KDi" kind="show" identifier="MapSegue" id="AhK-on-LGS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Experience" id="09z-fu-msI">
@@ -305,7 +308,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1TP-JW-cGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WOX-7O-Bm3"/>
+                    <navigationItem key="navigationItem" id="WOX-7O-Bm3">
+                        <barButtonItem key="rightBarButtonItem" title="Add Image Experience" id="skJ-yO-9iA">
+                            <connections>
+                                <action selector="addImageExperienceTapped:" destination="MI3-zJ-ekU" id="9rh-oZ-XO0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chooseImageButton" destination="eQ8-Bl-PqX" id="j96-hc-mpn"/>
                         <outlet property="geoSwitch" destination="G6w-FQ-Dyq" id="m7B-u0-DYz"/>

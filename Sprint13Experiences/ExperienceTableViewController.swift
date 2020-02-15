@@ -92,6 +92,11 @@ class ExperienceTableViewController: UITableViewController {
                 destinationVC.experienceController = self.experienceController
                 destinationVC.delegate = self as! ImageViewControllerDelegate
             }
+            
+        case "MapSegue":
+            if let destinationVC = segue.destination as? MapViewController {
+                destinationVC.experienceController = self.experienceController 
+            }
         default:
             return 
         

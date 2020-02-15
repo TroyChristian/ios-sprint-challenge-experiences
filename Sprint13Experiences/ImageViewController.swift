@@ -77,6 +77,12 @@ class ImageViewController:UIViewController {
     
     //MARK: IBActions
     
+    @IBAction func addImageExperienceTapped(_ sender: Any) {
+        addImage() 
+    }
+    
+    
+    
     @IBAction func chooseImage(_ sender: Any) {
         
         let authorizationStatus = PHPhotoLibrary.authorizationStatus()
@@ -250,7 +256,7 @@ class ImageViewController:UIViewController {
         }
         
         if geoSwitch.isOn {
-            LocationManager.shared.getCurrentLocation { (coordinate) in
+            LocationHelper.shared.getCurrentLocation { (coordinate) in
                 self.experienceController?.createExperience(title: title, mediaType: .image, geotag: coordinate)
             }
         } else {
@@ -261,7 +267,7 @@ class ImageViewController:UIViewController {
     
     func setImageViewHeight(with aspectRatio: CGFloat) {
         
-       // imageHeightConstraint.constant = imageView.frame.size.width * aspectRatio
+       //imageHeightConstraint.constant = imageView.frame.size.width * aspectRatio
         
         view.layoutSubviews()
     }

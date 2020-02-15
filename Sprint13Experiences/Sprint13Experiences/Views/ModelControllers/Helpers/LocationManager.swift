@@ -9,55 +9,60 @@
 import CoreLocation
 import Foundation
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
-    static let shared = LocationManager()
-    let locationManager = CLLocationManager()
+
+class LocationHelper: NSObject {
+
+    static let shared = LocationHelper()
+
+    private let locationManager = CLLocationManager()
     var group: DispatchGroup?
-    
-    private override init () {
+
+    override init() {
         super.init()
         locationManager.delegate = self
-        requestLocation()
-    }
-    
-    func requestLocation() {
-      let status = CLLocationManager.authorizationStatus()
-        switch status {
 
+        requestLocationAuthorization()
+    }
+
+    func requestLocationAuthorization() {
+
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            return
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
-        case .restricted:
-            break
-        case .denied:
-            break
-        case .authorizedAlways:
-            break
-        case .authorizedWhenInUse:
-            break
-        @unknown default:
+        default:
             break
         }
     }
 
+    func getCurrentLocation(completion: @escaping (CLLocationCoordinate2D?) -> Void) {
+        requestLocationAuthorization()
 
-    func getCurrentLocation(completion:@escaping (CLLocationCoordinate2D) -> Void) {
-        requestLocation()
         group = DispatchGroup()
+
         group?.enter()
+
         locationManager.requestLocation()
+
         group?.notify(queue: .main) {
             let coordinate = self.locationManager.location?.coordinate
+
             self.group = nil
-            completion(coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
+            completion(coordinate)
         }
     }
-
-
-//    func getLocation() -> CLLocationCoordinate2D? {
-//        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-//        locationManager.startUpdatingLocation()
-//        return locationManager.location?.coordinate
-//
-//    }
-//}
 }
+
+extension LocationHelper: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+         group?.leave()
+     }
+
+     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("Failed getting location \(error)")
+     }
+}
+
+
+
