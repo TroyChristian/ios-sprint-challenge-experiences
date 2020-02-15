@@ -119,13 +119,7 @@ class ImageViewController:UIViewController {
         filterType = .sepia
     }
     
-    @IBAction func blackAndWhiteButton(_ sender: UIButton) {
-        originalImage = imageView.image
-        valueLabel.removeFromSuperview()
-        valueSlider.removeFromSuperview()
-        filterType = .blackAndWhite
-        updateImage()
-    }
+ 
     
     
     @IBAction func blurButtonTapped(_ sender: UIButton) {
@@ -150,13 +144,7 @@ class ImageViewController:UIViewController {
     }
     
     
-    @IBAction func negativeButtonTapped(_ sender: UIButton) {
-        originalImage = imageView.image
-        valueSlider.removeFromSuperview()
-        valueLabel.removeFromSuperview()
-        filterType = .negative
-        updateImage()
-    }
+
     
     
     @IBAction func valueSliderChanged(_ sender: UISlider) {
@@ -240,7 +228,7 @@ class ImageViewController:UIViewController {
                    break
                }
            } else {
-               return 
+               return
            }
        }
     
@@ -258,16 +246,20 @@ class ImageViewController:UIViewController {
         if geoSwitch.isOn {
             LocationHelper.shared.getCurrentLocation { (coordinate) in
                 self.experienceController?.createExperience(title: title, mediaType: .image, geotag: coordinate)
+                self.navigationController?.popToRootViewController(animated: true)
             }
         } else {
             self.experienceController?.createExperience(title: title, mediaType: .image, geotag: nil)
+            self.navigationController?.popToRootViewController(animated: true) 
         }
+        
+        
         
     }
     
     func setImageViewHeight(with aspectRatio: CGFloat) {
         
-       //imageHeightConstraint.constant = imageView.frame.size.width * aspectRatio
+       
         
         view.layoutSubviews()
     }
@@ -290,16 +282,6 @@ class ImageViewController:UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 extension ImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -313,7 +295,6 @@ extension ImageViewController: UIImagePickerControllerDelegate, UINavigationCont
         
         imageView.image = image
         
-       // setImageViewHeight(with: image.ratio)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
