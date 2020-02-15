@@ -79,6 +79,10 @@
                         <viewLayoutGuide key="safeArea" id="bKd-FV-PoC"/>
                     </view>
                     <navigationItem key="navigationItem" id="ehw-YF-qxN"/>
+                    <connections>
+                        <outlet property="cameraView" destination="b5g-bQ-0Jf" id="krC-QX-yIk"/>
+                        <outlet property="recordButton" destination="YPr-hq-0sa" id="pRY-IE-iMV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MS2-6m-3Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
