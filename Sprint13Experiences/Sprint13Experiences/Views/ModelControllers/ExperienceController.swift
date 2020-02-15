@@ -12,6 +12,7 @@ import CoreLocation
 
 class ExperienceController {
     var experiences = [Experience]()
+   static var shared = ExperienceController() 
     
     func createExperience(title: String, mediaType:MediaType, geotag: CLLocationCoordinate2D?) {
         let experience = Experience(title:title, mediaType:mediaType, geotag:geotag)

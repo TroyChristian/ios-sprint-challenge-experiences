@@ -25,7 +25,8 @@ class MapViewController: UIViewController {
     }
     
     func getExperiences() {
-        guard let experiences = experienceController?.experiences else {return}
+        var experiences = ExperienceController.shared.experiences
+        if  experiences.count != 0 {
         
         DispatchQueue.main.async {
             self.mapView.addAnnotations(experiences)
@@ -37,6 +38,7 @@ class MapViewController: UIViewController {
         let region = MKCoordinateRegion(center: experience.coordinate, span: span)
         self.mapView.setRegion(region, animated: true)
     }
+        else { return }
 
 
     
@@ -58,4 +60,5 @@ func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnota
     }
     
     return annotationView
+}
 }

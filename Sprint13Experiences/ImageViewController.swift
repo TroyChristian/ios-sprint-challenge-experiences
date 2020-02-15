@@ -245,11 +245,11 @@ class ImageViewController:UIViewController {
         
         if geoSwitch.isOn {
             LocationHelper.shared.getCurrentLocation { (coordinate) in
-                self.experienceController?.createExperience(title: title, mediaType: .image, geotag: coordinate)
+                ExperienceController.shared.createExperience(title: title, mediaType: .image, geotag: coordinate)
                 self.navigationController?.popToRootViewController(animated: true)
             }
         } else {
-            self.experienceController?.createExperience(title: title, mediaType: .image, geotag: nil)
+            ExperienceController.shared.createExperience(title: title, mediaType: .image, geotag: nil)
             self.navigationController?.popToRootViewController(animated: true) 
         }
         

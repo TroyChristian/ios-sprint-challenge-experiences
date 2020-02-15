@@ -9,7 +9,7 @@
 import UIKit
 
 class ExperienceTableViewController: UITableViewController {
-    var experienceController = ExperienceController() // the instance that the app should share.
+  
    
     
   
@@ -54,7 +54,7 @@ class ExperienceTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return experienceController.experiences.count
+        return ExperienceController.shared.experiences.count
     }
 
     
@@ -62,8 +62,8 @@ class ExperienceTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = experienceController.experiences[indexPath.row].title
-        cell.detailTextLabel?.text = experienceController.experiences[indexPath.row].mediaType.rawValue
+        cell.textLabel?.text = ExperienceController.shared.experiences[indexPath.row].title
+        cell.detailTextLabel?.text = ExperienceController.shared.experiences[indexPath.row].mediaType.rawValue
 
         return cell
     }
@@ -77,25 +77,25 @@ class ExperienceTableViewController: UITableViewController {
         switch segue.identifier {
         case "VideoSegue":
             if let destinationVC = segue.destination as? VideoViewController {
-                destinationVC.experienceController = self.experienceController
+               // destinationVC.experienceController = self.experienceController
                 destinationVC.delegate = self as! VideoViewControllerDelegate
             }
             
         case "AudioSegue":
             if let destinationVC = segue.destination as? AudioViewController {
-                destinationVC.experienceController = self.experienceController
+                //destinationVC.experienceController = self.experienceController
                 destinationVC.delegate = self as! AudioViewControllerDelegate
             }
             
         case "ImageSegue":
             if let destinationVC = segue.destination as? ImageViewController {
-                destinationVC.experienceController = self.experienceController
+               // destinationVC.experienceController = self.experienceController
                 destinationVC.delegate = self as! ImageViewControllerDelegate
             }
             
         case "MapSegue":
             if let destinationVC = segue.destination as? MapViewController {
-                destinationVC.experienceController = self.experienceController 
+                destinationVC.experienceController = ExperienceController.shared
             }
         default:
             return 
