@@ -240,7 +240,7 @@ class ImageViewController:UIViewController {
                    break
                }
            } else {
-               imageView.image = nil
+               return 
            }
        }
     
