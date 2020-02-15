@@ -13,9 +13,10 @@ import CoreImage.CIFilterBuiltins
 
 enum FilterType {
     case sepia
+    case blackAndWhite
     case blur
     case sharpen
-   
+    case negative
 }
 
 protocol ImageViewControllerDelegate {
@@ -46,21 +47,15 @@ class ImageViewController:UIViewController {
     private var scaledImage: UIImage? {
         didSet {
             updateImage()
-            if ((imageView?.image) != nil) {
-                chooseImageButton.isHidden = true
-            }
         }
     }
     
     
     //MARK: LIFECYCLE
-   override func viewDidLoad() {
-           setImageViewHeight(with: 1.0)
-          super.viewDidLoad()
-
-          // Do any additional setup after loading the view.
-      }
-    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+         setImageViewHeight(with: 1.0)
+    }
     
     
     
@@ -116,7 +111,13 @@ class ImageViewController:UIViewController {
         filterType = .sepia
     }
     
-  
+    @IBAction func blackAndWhiteButton(_ sender: UIButton) {
+        originalImage = imageView.image
+        valueLabel.removeFromSuperview()
+        valueSlider.removeFromSuperview()
+        filterType = .blackAndWhite
+        updateImage()
+    }
     
     
     @IBAction func blurButtonTapped(_ sender: UIButton) {
@@ -141,7 +142,14 @@ class ImageViewController:UIViewController {
     }
     
     
-
+    @IBAction func negativeButtonTapped(_ sender: UIButton) {
+        originalImage = imageView.image
+        valueSlider.removeFromSuperview()
+        valueLabel.removeFromSuperview()
+        filterType = .negative
+        updateImage()
+    }
+    
     
     @IBAction func valueSliderChanged(_ sender: UISlider) {
         updateImage()
@@ -164,7 +172,15 @@ class ImageViewController:UIViewController {
            guard let outputCGImage = context.createCGImage(outputCIImage, from: CGRect(origin: .zero, size: image.size)) else { return nil }
                return UIImage(cgImage: outputCGImage)
                
-       
+           case .blackAndWhite:
+               guard let cgImage = image.cgImage else { return nil }
+               let ciImage = CIImage(cgImage: cgImage)
+               let filter = CIFilter.photoEffectNoir()
+               filter.inputImage = ciImage
+               guard let outputCIImage = filter.outputImage else { return nil }
+               guard let outputCGImage = context.createCGImage(outputCIImage, from: CGRect(origin: .zero, size: image.size)) else { return nil }
+                   return UIImage(cgImage: outputCGImage)
+               
            case .blur:
                guard let cgImage = image.cgImage else { return nil }
                let ciImage = CIImage(cgImage: cgImage)
@@ -185,14 +201,14 @@ class ImageViewController:UIViewController {
                       guard let outputCGImage = context.createCGImage(outputCIImage, from: CGRect(origin: .zero, size: image.size)) else { return nil }
                           return UIImage(cgImage: outputCGImage)
                
-//           case .negative:
-//               guard let cgImage = image.cgImage else { return nil }
-//               let ciImage = CIImage(cgImage: cgImage)
-//               let filter = CIFilter.colorInvert()
-//               filter.inputImage = ciImage
-//               guard let outputCIImage = filter.outputImage else { return nil }
-//               guard let outputCGImage = context.createCGImage(outputCIImage, from: CGRect(origin: .zero, size: image.size)) else { return nil }
-//                   return UIImage(cgImage: outputCGImage)
+           case .negative:
+               guard let cgImage = image.cgImage else { return nil }
+               let ciImage = CIImage(cgImage: cgImage)
+               let filter = CIFilter.colorInvert()
+               filter.inputImage = ciImage
+               guard let outputCIImage = filter.outputImage else { return nil }
+               guard let outputCGImage = context.createCGImage(outputCIImage, from: CGRect(origin: .zero, size: image.size)) else { return nil }
+                   return UIImage(cgImage: outputCGImage)
                
            }
        }
@@ -202,16 +218,16 @@ class ImageViewController:UIViewController {
                switch filterType {
                case .sepia:
                    imageView.image = filter(scaledImage, for: .sepia)
-//               case .blackAndWhite:
-//                   imageView.image = filter(scaledImage, for: .blackAndWhite)
+               case .blackAndWhite:
+                   imageView.image = filter(scaledImage, for: .blackAndWhite)
                case .blur:
                    imageView.image = filter(scaledImage, for: .blur)
                    
                case .sharpen:
                    imageView.image = filter(scaledImage, for: .sharpen)
                
-//               case .negative:
-//                   imageView.image = filter(scaledImage, for: .negative)
+               case .negative:
+                   imageView.image = filter(scaledImage, for: .negative)
                default:
                    break
                }
@@ -227,7 +243,7 @@ class ImageViewController:UIViewController {
     
     func setImageViewHeight(with aspectRatio: CGFloat) {
         
-        //imageHeightConstraint.constant = imageView.frame.size.width * aspectRatio
+       // imageHeightConstraint.constant = imageView.frame.size.width * aspectRatio
         
         view.layoutSubviews()
     }
@@ -265,7 +281,7 @@ extension ImageViewController: UIImagePickerControllerDelegate, UINavigationCont
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        //chooseImageButton.setTitle("", for: [])
+        chooseImageButton.setTitle("", for: [])
         
         picker.dismiss(animated: true, completion: nil)
         

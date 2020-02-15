@@ -134,7 +134,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="ACL-Bb-NkN" kind="show" identifier="VideoSegue" id="Twp-pw-c2K"/>
-                        <segue destination="T0c-Gh-jpx" kind="show" customClass="AudioSegue" id="0Hv-3A-WxR"/>
+                        <segue destination="T0c-Gh-jpx" kind="show" identifier="AudioSegue" id="0Hv-3A-WxR"/>
                         <segue destination="MI3-zJ-ekU" kind="show" identifier="ImageSegue" id="FfM-nc-9Fo"/>
                     </connections>
                 </tableViewController>
@@ -219,25 +219,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-vv-2aj">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-vv-2aj">
                                 <rect key="frame" x="20" y="501.5" width="341" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wby-x9-Dmh">
-                                        <rect key="frame" x="0.0" y="0.0" width="181" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="30"/>
                                         <state key="normal" title="Sepia"/>
                                         <connections>
                                             <action selector="sepiaButtonTapped:" destination="MI3-zJ-ekU" eventType="touchUpInside" id="6YX-OL-EHP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WX-lY-eSo">
-                                        <rect key="frame" x="217" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="116.5" y="0.0" width="108" height="30"/>
                                         <state key="normal" title="Blur"/>
                                         <connections>
                                             <action selector="blurButtonTapped:" destination="MI3-zJ-ekU" eventType="touchUpInside" id="1Hv-HC-14o"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwF-Mq-ZUa">
-                                        <rect key="frame" x="283" y="0.0" width="58" height="30"/>
+                                        <rect key="frame" x="232.5" y="0.0" width="108.5" height="30"/>
                                         <state key="normal" title="Sharpen"/>
                                         <connections>
                                             <action selector="sharpenButtonTapped:" destination="MI3-zJ-ekU" eventType="touchUpInside" id="AKE-iq-T6P"/>
@@ -263,7 +263,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-FQ-Dyq">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-FQ-Dyq">
                                 <rect key="frame" x="310" y="781" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ8-Bl-PqX">
