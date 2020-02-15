@@ -12,6 +12,7 @@ import Foundation
 class LocationManager: NSObject, CLLocationManagerDelegate {
     static let shared = LocationManager()
     let locationManager = CLLocationManager()
+    var group: DispatchGroup?
     
     private override init () {
         super.init()
@@ -22,7 +23,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func requestLocation() {
       let status = CLLocationManager.authorizationStatus()
         switch status {
-            
+
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
@@ -37,11 +38,26 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             break
         }
     }
-    
-    func getLocation() -> CLLocationCoordinate2D? {
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
-        return locationManager.location?.coordinate
-        
+
+
+    func getCurrentLocation(completion:@escaping (CLLocationCoordinate2D) -> Void) {
+        requestLocation()
+        group = DispatchGroup()
+        group?.enter()
+        locationManager.requestLocation()
+        group?.notify(queue: .main) {
+            let coordinate = self.locationManager.location?.coordinate
+            self.group = nil
+            completion(coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
+        }
     }
+
+
+//    func getLocation() -> CLLocationCoordinate2D? {
+//        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+//        locationManager.startUpdatingLocation()
+//        return locationManager.location?.coordinate
+//
+//    }
+//}
 }
