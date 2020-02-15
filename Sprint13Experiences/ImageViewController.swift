@@ -61,6 +61,8 @@ class ImageViewController:UIViewController {
     
     //MARK: IBOUTLETS
     
+    
+    @IBOutlet weak var geoSwitch: UISwitch!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var imageTitleTextField: UITextField!
@@ -239,7 +241,23 @@ class ImageViewController:UIViewController {
    
   
 
-    
+    func addImage() {
+        view.endEditing(true)
+        
+        guard let title = imageTitleTextField.text, !title.isEmpty else {
+            presentInformationalAlertController(title: "Title Required", message: "Please title your image experience")
+            return
+        }
+        
+        if geoSwitch.isOn {
+            LocationManager.shared.getCurrentLocation { (coordinate) in
+                self.experienceController?.createExperience(title: title, mediaType: .image, geotag: coordinate)
+            }
+        } else {
+            self.experienceController?.createExperience(title: title, mediaType: .image, geotag: nil)
+        }
+        
+    }
     
     func setImageViewHeight(with aspectRatio: CGFloat) {
         

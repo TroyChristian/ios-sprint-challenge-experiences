@@ -308,6 +308,7 @@
                     <navigationItem key="navigationItem" id="WOX-7O-Bm3"/>
                     <connections>
                         <outlet property="chooseImageButton" destination="eQ8-Bl-PqX" id="j96-hc-mpn"/>
+                        <outlet property="geoSwitch" destination="G6w-FQ-Dyq" id="m7B-u0-DYz"/>
                         <outlet property="imageTitleTextField" destination="fcU-LM-5ws" id="1ai-K6-BQu"/>
                         <outlet property="imageView" destination="kfn-K4-thC" id="azE-Af-nfw"/>
                         <outlet property="valueLabel" destination="znI-kv-l44" id="c8w-FS-oPt"/>
