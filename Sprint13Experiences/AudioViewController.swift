@@ -42,6 +42,12 @@ class AudioViewController: UIViewController {
     
     @IBOutlet weak var timeSlider: UISlider!
     
+    
+    
+    @IBOutlet weak var geoSwitch: UISwitch!
+    
+    @IBOutlet weak var geoSwitchLabel: UILabel!
+    
     private lazy var timeIntervalFormatter: DateComponentsFormatter = {
         // NOTE: DateComponentFormatter is good for minutes/hours/seconds
         // DateComponentsFormatter is not good for milliseconds, use DateFormatter instead)
