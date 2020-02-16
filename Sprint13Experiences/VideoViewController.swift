@@ -34,12 +34,18 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var cameraView: CameraPreviewView!
     
     
+    
+    @IBOutlet weak var videoTitleTextField: UITextField!
+    
+    
+    
     //MARK: ACTIONS:
     @IBAction func addVideoExperienceButtonTapped(_ sender: Any) {
+        
+        
     }
     
-    @IBAction func recordButtonTapped(_ sender: Any) {
-    }
+   
     
     
     
@@ -63,7 +69,9 @@ class VideoViewController: UIViewController {
         captureSession.stopRunning()
     }
         
-        
+    func updateViews() {
+        recordButton.isSelected = fileOutput.isRecording
+    }
         
     
     
@@ -169,10 +177,17 @@ class VideoViewController: UIViewController {
         player?.play()
     }
     
-    
-    private func updateViews() {
-        recordButton.isSelected = isRecording
+    func addVideo() {
+        view.endEditing(true)
+        
+        guard let title = videoTitleTextField.text, !title.isEmpty else {
+            presentInformationalAlertController(title: "Title Required", message: "Video Experiences require a title.")
+            return
+        }
     }
+    
+    
+
 
 }
 
