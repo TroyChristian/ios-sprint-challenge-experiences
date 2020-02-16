@@ -132,11 +132,13 @@ class AudioViewController: UIViewController {
         if geoSwitch.isOn {
        LocationHelper.shared.getCurrentLocation { (coordinate) in
                       ExperienceController.shared.createExperience(title: title, mediaType: .audio, geotag: coordinate)
+        self.delegate?.addAudioButtonTapped()
         self.navigationController?.popToRootViewController(animated: true) }
         
         
         } else {
             ExperienceController.shared.createExperience(title: title, mediaType: .audio, geotag: nil)
+            self.delegate?.addAudioButtonTapped()
                self.navigationController?.popToRootViewController(animated: true) }
             
             
