@@ -185,9 +185,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ort-QA-mgE">
-                                <rect key="frame" x="126" y="313" width="163" height="30"/>
-                                <state key="normal" title="Record Audio Comment">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ort-QA-mgE">
+                                <rect key="frame" x="310" y="600" width="20" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
+                                <state key="normal" image="mic.circle" catalog="system">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -211,23 +212,27 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
-                                <rect key="frame" x="155" y="575" width="105" height="30"/>
-                                <state key="normal" title="Playback Audio"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
+                                <rect key="frame" x="110" y="613" width="144" height="22"/>
+                                <state key="normal" title="Playback Audio" image="play.circle" catalog="system"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6E-Cz-xmQ" customClass="AudioVisualizer" customModule="Sprint13Experiences" customModuleProvider="target">
+                                <rect key="frame" x="87" y="228" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ort-QA-mgE" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="126" id="AIL-br-ige"/>
-                            <constraint firstItem="mEy-aD-Vwd" firstAttribute="top" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="69" id="N6f-cN-9qp"/>
-                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="ort-QA-mgE" secondAttribute="trailing" constant="125" id="ajC-4B-idU"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="mEy-aD-Vwd" secondAttribute="bottom" constant="227" id="MXd-aF-zcv"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="ort-QA-mgE" secondAttribute="bottom" constant="214" id="cAf-zH-hHN"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="ort-QA-mgE" secondAttribute="trailing" constant="84" id="eCj-Vp-v2L"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="fcE-fv-3ff"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="356" id="hBg-gM-IbH"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="hLq-cX-zdS"/>
-                            <constraint firstItem="mEy-aD-Vwd" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="155" id="i8Y-wy-eXn"/>
-                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="mEy-aD-Vwd" secondAttribute="trailing" constant="154" id="inY-1N-rXz"/>
+                            <constraint firstItem="mEy-aD-Vwd" firstAttribute="top" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="107" id="i0Q-nX-jwI"/>
                             <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="m6r-4g-BI8"/>
-                            <constraint firstItem="TyK-Xq-fVR" firstAttribute="top" secondItem="ort-QA-mgE" secondAttribute="bottom" constant="133" id="s8s-vb-xtE"/>
+                            <constraint firstItem="ort-QA-mgE" firstAttribute="top" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="94" id="mRq-J3-rmf"/>
+                            <constraint firstItem="mEy-aD-Vwd" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="110" id="vzE-V4-N8E"/>
                             <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="yvs-QH-v3O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xwu-e4-PUh"/>
@@ -243,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpd-GO-mBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="-1107"/>
+            <point key="canvasLocation" x="1760.8695652173915" y="-1107.5892857142856"/>
         </scene>
         <!--ImageViewController-->
         <scene sceneID="B9d-1n-PYw">
@@ -388,5 +393,7 @@
     </scenes>
     <resources>
         <image name="Record" width="116" height="116"/>
+        <image name="mic.circle" catalog="system" width="64" height="60"/>
+        <image name="play.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
