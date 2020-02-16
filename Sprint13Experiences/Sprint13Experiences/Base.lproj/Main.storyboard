@@ -233,6 +233,13 @@
                         <viewLayoutGuide key="safeArea" id="Xwu-e4-PUh"/>
                     </view>
                     <navigationItem key="navigationItem" id="pTb-0y-8tR"/>
+                    <connections>
+                        <outlet property="playButton" destination="mEy-aD-Vwd" id="RGI-YG-qdB"/>
+                        <outlet property="recordButton" destination="ort-QA-mgE" id="XvD-gE-pIc"/>
+                        <outlet property="timeElapsedLabel" destination="SHa-ws-kUO" id="OgE-xx-271"/>
+                        <outlet property="timeRemainingLabel" destination="QJL-Fu-jZB" id="CTy-T3-76E"/>
+                        <outlet property="timeSlider" destination="31J-YK-Jfz" id="O7M-0k-jrb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpd-GO-mBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
