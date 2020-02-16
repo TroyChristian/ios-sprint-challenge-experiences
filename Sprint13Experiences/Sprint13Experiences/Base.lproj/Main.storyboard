@@ -220,20 +220,35 @@
                                 <rect key="frame" x="87" y="228" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0my-CO-Uml">
+                                <rect key="frame" x="313" y="811" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add GeoTag? :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lom-hp-Lpr">
+                                <rect key="frame" x="20" y="816" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="mEy-aD-Vwd" secondAttribute="bottom" constant="227" id="MXd-aF-zcv"/>
+                            <constraint firstItem="0my-CO-Uml" firstAttribute="top" secondItem="ort-QA-mgE" secondAttribute="bottom" constant="163" id="S2L-rt-D5M"/>
+                            <constraint firstItem="Lom-hp-Lpr" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="20" id="SIY-FS-Wud"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="ort-QA-mgE" secondAttribute="bottom" constant="214" id="cAf-zH-hHN"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="ort-QA-mgE" secondAttribute="trailing" constant="84" id="eCj-Vp-v2L"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="fcE-fv-3ff"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="356" id="hBg-gM-IbH"/>
                             <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="TyK-Xq-fVR" secondAttribute="trailing" constant="50" id="hLq-cX-zdS"/>
                             <constraint firstItem="mEy-aD-Vwd" firstAttribute="top" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="107" id="i0Q-nX-jwI"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="Lom-hp-Lpr" secondAttribute="bottom" constant="25" id="l2Y-gS-iCh"/>
                             <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="m6r-4g-BI8"/>
                             <constraint firstItem="ort-QA-mgE" firstAttribute="top" secondItem="TyK-Xq-fVR" secondAttribute="bottom" constant="94" id="mRq-J3-rmf"/>
+                            <constraint firstItem="Lom-hp-Lpr" firstAttribute="top" secondItem="mEy-aD-Vwd" secondAttribute="bottom" constant="181" id="nOA-QV-PNy"/>
                             <constraint firstItem="mEy-aD-Vwd" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="110" id="vzE-V4-N8E"/>
                             <constraint firstItem="TyK-Xq-fVR" firstAttribute="leading" secondItem="Xwu-e4-PUh" secondAttribute="leading" constant="50" id="yvs-QH-v3O"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="bottom" secondItem="0my-CO-Uml" secondAttribute="bottom" constant="20" id="zab-U5-Liz"/>
+                            <constraint firstItem="Xwu-e4-PUh" firstAttribute="trailing" secondItem="0my-CO-Uml" secondAttribute="trailing" constant="52" id="ztN-vh-55F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xwu-e4-PUh"/>
                     </view>
