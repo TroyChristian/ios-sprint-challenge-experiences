@@ -273,7 +273,11 @@
                         <viewLayoutGuide key="safeArea" id="Xwu-e4-PUh"/>
                     </view>
                     <navigationItem key="navigationItem" id="pTb-0y-8tR">
-                        <barButtonItem key="rightBarButtonItem" title="Add Audio Experience" id="QlV-87-NWo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Audio Experience" id="QlV-87-NWo">
+                            <connections>
+                                <action selector="addAudioExperienceTapped:" destination="T0c-Gh-jpx" id="AhV-no-tRH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addAudioTapped" destination="QlV-87-NWo" id="ygA-Q5-kHQ"/>

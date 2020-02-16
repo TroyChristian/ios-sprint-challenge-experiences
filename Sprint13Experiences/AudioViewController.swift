@@ -69,7 +69,10 @@ class AudioViewController: UIViewController {
     
     //MARK: ACTIONS
     
-    @IBOutlet weak var addAudioTapped: UIBarButtonItem!
+    @IBAction func addAudioExperienceTapped(_ sender: Any) {
+        addAudio() 
+    }
+    
     
     
 
