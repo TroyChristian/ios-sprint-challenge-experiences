@@ -243,6 +243,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title for your audio experience" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0EI-hv-DNG">
+                                <rect key="frame" x="11" y="95" width="392" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -271,6 +277,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addAudioTapped" destination="QlV-87-NWo" id="ygA-Q5-kHQ"/>
+                        <outlet property="audioTitleTextField" destination="0EI-hv-DNG" id="vMv-AM-Chw"/>
                         <outlet property="audioVisualizer" destination="k6E-Cz-xmQ" id="uBF-sQ-jxP"/>
                         <outlet property="geoSwitch" destination="0my-CO-Uml" id="qNO-XF-KYM"/>
                         <outlet property="geoSwitchLabel" destination="Lom-hp-Lpr" id="auO-ae-WAA"/>

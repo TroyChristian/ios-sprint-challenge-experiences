@@ -64,6 +64,9 @@ class AudioViewController: UIViewController {
     @IBOutlet weak var geoSwitchLabel: UILabel!
     
     
+    @IBOutlet weak var audioTitleTextField: UITextField!
+    
+    
     //MARK: ACTIONS
     
     @IBOutlet weak var addAudioTapped: UIBarButtonItem!
