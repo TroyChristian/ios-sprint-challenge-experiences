@@ -95,7 +95,7 @@ class AudioViewController: UIViewController {
         playButton.isSelected = isPlaying
         recordButton.isSelected = isRecording
         
-        //update time (currentTime)
+//        update time (currentTime)
         let elapsedTime = audioPlayer?.currentTime ?? 0
         timeElapsedLabel.text = timeIntervalFormatter.string(from: elapsedTime)
         
@@ -112,13 +112,10 @@ class AudioViewController: UIViewController {
     
     
     func loadAudio() {
-        // app bundle is readonly folder
-//     let soungURL = Bundle.main.url(forResource: "piano", withExtension: "mp3")!//programmer error if this fails to load
+
         
-        
-//        audioPlayer = try? AVAudioPlayer(contentsOf: recordingURL ) //FIXME: use better error handling
-//        audioPlayer?.isMeteringEnabled = true
-//        audioPlayer?.delegate = self
+        audioPlayer?.isMeteringEnabled = true
+       //audioPlayer?.delegate = self
     }
     
     //TODO:
@@ -140,7 +137,7 @@ class AudioViewController: UIViewController {
           self.updateViews()
         
         self.audioPlayer?.updateMeters()
-//        self.audioVisualizer.addValue(decibelValue: audioPlayer.averagePower(forChannel: 0))
+      self.audioVisualizer.addValue(decibelValue: audioPlayer.averagePower(forChannel: 0))
         
       })
   }
