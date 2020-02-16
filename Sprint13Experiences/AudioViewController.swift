@@ -17,14 +17,28 @@ protocol AudioViewControllerDelegate {
 
 
 class AudioViewController: UIViewController {
+    
+//MARK: Variables
     var delegate: AudioViewControllerDelegate?
     var audioPlayer: AVAudioPlayer?
     var audioRecorder: AVAudioRecorder?
     var recordingURL:URL?
     var timer: Timer?
     
+  
+    private lazy var timeIntervalFormatter: DateComponentsFormatter = {
+        // NOTE: DateComponentFormatter is good for minutes/hours/seconds
+        // DateComponentsFormatter is not good for milliseconds, use DateFormatter instead)
+        
+        let formatting = DateComponentsFormatter()
+        formatting.unitsStyle = .positional // 00:00  mm:ss
+        formatting.zeroFormattingBehavior = .pad
+        formatting.allowedUnits = [.minute, .second]
+        return formatting
+    }()
+    
 
-    //@IBOutlet weak var audioVisualizer: AudioVisualizer!
+    @IBOutlet weak var audioVisualizer: AudioVisualizer!
     
     //MARK: OUTLETS
     
@@ -48,16 +62,13 @@ class AudioViewController: UIViewController {
     
     @IBOutlet weak var geoSwitchLabel: UILabel!
     
-    private lazy var timeIntervalFormatter: DateComponentsFormatter = {
-        // NOTE: DateComponentFormatter is good for minutes/hours/seconds
-        // DateComponentsFormatter is not good for milliseconds, use DateFormatter instead)
-        
-        let formatting = DateComponentsFormatter()
-        formatting.unitsStyle = .positional // 00:00  mm:ss
-        formatting.zeroFormattingBehavior = .pad
-        formatting.allowedUnits = [.minute, .second]
-        return formatting
-    }()
+    
+    //MARK: ACTIONS
+    
+    @IBOutlet weak var addAudioTapped: UIBarButtonItem!
+    
+    
+
     
     
     // MARK: - View Controller Lifecycle
@@ -65,7 +76,7 @@ class AudioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Use a font that won't jump around as values change
+       
         timeElapsedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeElapsedLabel.font.pointSize,
                                                           weight: .regular)
         timeRemainingLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeRemainingLabel.font.pointSize,
@@ -109,8 +120,7 @@ class AudioViewController: UIViewController {
     }
     
   func startTimer() {
-      // timers are automatically registered on run loop, so we need to cancel before adding a new one
-    // call evrey 30 ms (10-30)
+   
       stopTimer()
     timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true, block: { [weak self] (timer) in
         
@@ -128,11 +138,7 @@ class AudioViewController: UIViewController {
         timer = nil
     }
     
-    //what do i want to do?
-     //pause it
-     // valume
-     // restart the audio
-     // update the time/labels
+ 
     
     var isPlaying: Bool {
         audioPlayer?.isPlaying ?? false

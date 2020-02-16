@@ -252,8 +252,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xwu-e4-PUh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pTb-0y-8tR"/>
+                    <navigationItem key="navigationItem" id="pTb-0y-8tR">
+                        <barButtonItem key="rightBarButtonItem" title="Add Audio Experience" id="QlV-87-NWo"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addAudioTapped" destination="QlV-87-NWo" id="ygA-Q5-kHQ"/>
+                        <outlet property="audioVisualizer" destination="k6E-Cz-xmQ" id="uBF-sQ-jxP"/>
                         <outlet property="geoSwitch" destination="0my-CO-Uml" id="qNO-XF-KYM"/>
                         <outlet property="geoSwitchLabel" destination="Lom-hp-Lpr" id="auO-ae-WAA"/>
                         <outlet property="playButton" destination="mEy-aD-Vwd" id="RGI-YG-qdB"/>
