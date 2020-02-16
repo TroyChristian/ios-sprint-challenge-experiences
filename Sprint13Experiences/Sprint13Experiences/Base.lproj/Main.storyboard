@@ -195,6 +195,9 @@
                                 <state key="selected" image="mic.circle.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggleRecording:" destination="T0c-Gh-jpx" eventType="touchUpInside" id="bfG-O4-Ild"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="TyK-Xq-fVR">
                                 <rect key="frame" x="50" y="476" width="314" height="30"/>
@@ -207,6 +210,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="31J-YK-Jfz" userLabel="AudioSlider">
                                         <rect key="frame" x="94" y="0.0" width="126" height="31"/>
+                                        <connections>
+                                            <action selector="updateCurrentTime:" destination="T0c-Gh-jpx" eventType="valueChanged" id="q5l-CU-Ozu"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJL-Fu-jZB" userLabel="Time Remaining Label">
                                         <rect key="frame" x="268" y="0.0" width="46" height="30"/>
@@ -216,10 +222,13 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
                                 <rect key="frame" x="110" y="613" width="20" height="22"/>
                                 <state key="normal" image="play.circle" catalog="system"/>
                                 <state key="selected" image="pause.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="togglePlayback:" destination="T0c-Gh-jpx" eventType="touchUpInside" id="5bm-UH-8PY"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6E-Cz-xmQ" customClass="AudioVisualizer" customModule="Sprint13Experiences" customModuleProvider="target">
                                 <rect key="frame" x="87" y="228" width="240" height="128"/>
