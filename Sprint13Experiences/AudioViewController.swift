@@ -127,7 +127,7 @@ class AudioViewController: UIViewController {
     //TODO:
     func addAudio() {
         view.endEditing(true)
-        guard let _ = audioData else { return }
+        //guard let _ = audioData else { return }
         let title = audioTitleTextField.text ?? "Audio Experience"
         if geoSwitch.isOn {
        LocationHelper.shared.getCurrentLocation { (coordinate) in
