@@ -123,8 +123,23 @@ class AudioViewController: UIViewController {
     
     //TODO:
     func addAudio() {
+        view.endEditing(true)
+        guard let _ = audioData else { return }
+        let title = audioTitleTextField.text ?? "Audio Experience"
+        if geoSwitch.isOn {
+       LocationHelper.shared.getCurrentLocation { (coordinate) in
+                      ExperienceController.shared.createExperience(title: title, mediaType: .audio, geotag: coordinate)
+        self.navigationController?.popToRootViewController(animated: true) }
         
-    }
+        
+        } else {
+            ExperienceController.shared.createExperience(title: title, mediaType: .audio, geotag: nil)
+               self.navigationController?.popToRootViewController(animated: true) }
+            
+            
+        }
+        
+    
     
     
     func playBackRecording() {
