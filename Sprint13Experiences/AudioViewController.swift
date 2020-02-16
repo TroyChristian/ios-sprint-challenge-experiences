@@ -24,6 +24,7 @@ class AudioViewController: UIViewController {
     var audioRecorder: AVAudioRecorder?
     var recordingURL:URL?
     var timer: Timer?
+    var audioData:Data?
     
   
     private lazy var timeIntervalFormatter: DateComponentsFormatter = {
@@ -107,16 +108,27 @@ class AudioViewController: UIViewController {
     }
     
     
-    // MARK: - Playback
+    // MARK: - Functions
+    
     
     func loadAudio() {
         // app bundle is readonly folder
 //     let soungURL = Bundle.main.url(forResource: "piano", withExtension: "mp3")!//programmer error if this fails to load
         
         
-//        audioPlayer = try? AVAudioPlayer(contentsOf: recordingURL ?? <#default value#>) //FIXME: use better error handling
+//        audioPlayer = try? AVAudioPlayer(contentsOf: recordingURL ) //FIXME: use better error handling
 //        audioPlayer?.isMeteringEnabled = true
 //        audioPlayer?.delegate = self
+    }
+    
+    //TODO:
+    func addAudio() {
+        
+    }
+    
+    
+    func playBackRecording() {
+        
     }
     
   func startTimer() {
@@ -235,20 +247,7 @@ class AudioViewController: UIViewController {
 }
 
 
-extension AudioViewController: AVAudioPlayerDelegate {
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        updateViews()
-        stopTimer()
-    }
-    
-    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
-        if let error = error {
-            print("Audio Player Error: \(error)")
-        }
-    }
-    
-}
+
 
 extension AudioViewController:AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
@@ -266,4 +265,13 @@ extension AudioViewController:AVAudioRecorderDelegate {
             print("AudioRecorder error: \(error)")
         }
     }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        if let error = error {
+            print("Audio Player Error: \(error)")
+        }
+    }
+
+    
+
 }

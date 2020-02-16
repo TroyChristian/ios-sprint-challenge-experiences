@@ -190,6 +190,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="61"/>
                                 <state key="normal" image="mic.circle" catalog="system">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" image="mic.circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="TyK-Xq-fVR">
@@ -212,9 +216,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
-                                <rect key="frame" x="110" y="613" width="144" height="22"/>
-                                <state key="normal" title="Playback Audio" image="play.circle" catalog="system"/>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-aD-Vwd">
+                                <rect key="frame" x="110" y="613" width="20" height="22"/>
+                                <state key="normal" image="play.circle" catalog="system"/>
+                                <state key="selected" image="pause.circle" catalog="system"/>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6E-Cz-xmQ" customClass="AudioVisualizer" customModule="Sprint13Experiences" customModuleProvider="target">
                                 <rect key="frame" x="87" y="228" width="240" height="128"/>
@@ -415,6 +420,8 @@
     <resources>
         <image name="Record" width="116" height="116"/>
         <image name="mic.circle" catalog="system" width="64" height="60"/>
+        <image name="mic.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="pause.circle" catalog="system" width="64" height="60"/>
         <image name="play.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
