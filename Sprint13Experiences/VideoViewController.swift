@@ -39,9 +39,14 @@ class VideoViewController: UIViewController {
     
     
     
+    @IBOutlet weak var geoSwitch: UISwitch!
+    
+    
+    @IBOutlet weak var geoSwitchLabel: UILabel!
+    
     //MARK: ACTIONS:
     @IBAction func addVideoExperienceButtonTapped(_ sender: Any) {
-        
+        addVideo()
         
     }
     
@@ -141,7 +146,7 @@ class VideoViewController: UIViewController {
         fatalError("No cameras available on the device (or you're using a simulator)")
     }
 
-
+// I am going to move this up to the top, but really dont want to break the storyboard right now. 
     @IBAction func recordButtonPressed(_ sender: Any) {
         toggleRecord()
       
@@ -184,6 +189,24 @@ class VideoViewController: UIViewController {
             presentInformationalAlertController(title: "Title Required", message: "Video Experiences require a title.")
             return
         }
+        
+        if geoSwitch.isOn {
+            LocationHelper.shared.getCurrentLocation { (coordinate) in
+                ExperienceController.shared.createExperience(title: title, mediaType: .video, geotag: coordinate)
+                
+                self.delegate?.addVideoButtonTapped()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        } else {
+             ExperienceController.shared.createExperience(title: title, mediaType: .video, geotag: nil)
+            self.delegate?.addVideoButtonTapped()
+             self.navigationController?.popToRootViewController(animated: true)
+            
+            
+            
+        }
+        
+        
     }
     
     

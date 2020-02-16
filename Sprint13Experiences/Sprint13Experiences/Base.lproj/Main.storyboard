@@ -106,6 +106,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cameraView" destination="b5g-bQ-0Jf" id="krC-QX-yIk"/>
+                        <outlet property="geoSwitch" destination="3px-t3-Qml" id="d6x-kL-ZKY"/>
+                        <outlet property="geoSwitchLabel" destination="WpN-Uy-s8a" id="jf0-xD-fHp"/>
                         <outlet property="recordButton" destination="YPr-hq-0sa" id="pRY-IE-iMV"/>
                         <outlet property="videoTitleTextField" destination="FfF-CZ-U4d" id="HMm-VP-8wU"/>
                     </connections>
