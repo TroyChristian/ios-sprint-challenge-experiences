@@ -280,7 +280,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addAudioTapped" destination="QlV-87-NWo" id="ygA-Q5-kHQ"/>
                         <outlet property="audioTitleTextField" destination="0EI-hv-DNG" id="vMv-AM-Chw"/>
                         <outlet property="audioVisualizer" destination="k6E-Cz-xmQ" id="uBF-sQ-jxP"/>
                         <outlet property="geoSwitch" destination="0my-CO-Uml" id="qNO-XF-KYM"/>
