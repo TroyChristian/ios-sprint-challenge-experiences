@@ -7,24 +7,340 @@
 //
 
 import UIKit
+import CoreLocation
+import AVFoundation
+
+protocol AudioViewControllerDelegate {
+    func addAudioButtonTapped() 
+    
+}
+
+
 
 class AudioViewController: UIViewController {
+    
+//MARK: Variables
+    var delegate: AudioViewControllerDelegate?
+    var audioPlayer: AVAudioPlayer?
+    var audioRecorder: AVAudioRecorder?
+    var recordingURL:URL?
+    var timer: Timer?
+    var audioData:Data?
+    var customCoordinate: CLLocationCoordinate2D?
+    
+  
+    private lazy var timeIntervalFormatter: DateComponentsFormatter = {
+        // NOTE: DateComponentFormatter is good for minutes/hours/seconds
+        // DateComponentsFormatter is not good for milliseconds, use DateFormatter instead)
+        
+        let formatting = DateComponentsFormatter()
+        formatting.unitsStyle = .positional // 00:00  mm:ss
+        formatting.zeroFormattingBehavior = .pad
+        formatting.allowedUnits = [.minute, .second]
+        return formatting
+    }()
+    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var audioVisualizer: AudioVisualizer!
+    
+    //MARK: OUTLETS
+    
+    @IBOutlet weak var playButton: UIButton!
+    
+    
+    @IBOutlet weak var recordButton: UIButton!
+    
+    
+    @IBOutlet weak var timeElapsedLabel: UILabel!
+    
+    
+    @IBOutlet weak var timeRemainingLabel: UILabel!
+    
+    
+    @IBOutlet weak var timeSlider: UISlider!
+    
+    
+    
+    @IBOutlet weak var geoSwitch: UISwitch!
+    
+    @IBOutlet weak var geoSwitchLabel: UILabel!
+    
+    
+    @IBOutlet weak var audioTitleTextField: UITextField!
+    
+    
+    //MARK: ACTIONS
+    
+    @IBAction func addAudioExperienceTapped(_ sender: Any) {
+        addAudio() 
+    }
+    
+    
+    @IBAction func geoSwitchTapped(_ sender: Any) {
+        
+        chooseLocation()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    // MARK: - View Controller Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        audioTitleTextField.delegate = self as? UITextFieldDelegate
+        
+       
+        timeElapsedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeElapsedLabel.font.pointSize,
+                                                          weight: .regular)
+        timeRemainingLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeRemainingLabel.font.pointSize,
+                                                                   weight: .regular)
+         loadAudio()
+        updateViews()
+        
     }
-    */
+    
+    deinit {
+        stopTimer()
+    }
+    
+    private func updateViews() {
+        playButton.isSelected = isPlaying
+        recordButton.isSelected = isRecording
+        
+//        update time (currentTime)
+        let elapsedTime = audioPlayer?.currentTime ?? 0
+        timeElapsedLabel.text = timeIntervalFormatter.string(from: elapsedTime)
+        
+        timeSlider.value = Float(elapsedTime)
+        timeSlider.minimumValue = 0
+        timeSlider.maximumValue = Float(audioPlayer?.duration ?? 0)
+        
+        let timeRemaining = (audioPlayer?.duration ?? 0) - elapsedTime
+        timeRemainingLabel.text = timeIntervalFormatter.string(from: timeRemaining)
+    }
+    
+    
+    // MARK: - Functions
+        func chooseLocation() {
+            let alert = UIAlertController(title: "Custom Location", message: "Input the latitude and longitude of where your experience took place. Or press cancel to automatically use your current location", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title:"Cancel", style: .cancel, handler: nil))
+            
+            alert.addTextField(configurationHandler: { textField in
+                textField.placeholder = "Latitude: "})
+            
+            alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Longitude: "})
+            
+            alert.addAction(UIAlertAction(title: "Set Custom Location", style: .default, handler: { action in
+                
+                if let latitude = (alert.textFields?.first?.text) ,
+                 let  longitude = (alert.textFields?[1].text) {
+                 guard   let lat = CLLocationDegrees(latitude),
+                    let  long = CLLocationDegrees(longitude) else {print( "Returning line 320.") ; return}
+                   
+                    print("322 \(lat), \(long)")
+    //
+                    
+                    self.customCoordinate = LocationHelper.shared.getCustomLocation(latitude:lat ?? 33.3 , longitude: long ?? 33.3)
+                    
+                    
+                   
+                    
+                } else { return }
+            }))
+            self.present(alert, animated:true, completion: nil)
+        }
+    
+    func loadAudio() {
+
+        
+        audioPlayer?.isMeteringEnabled = true
+       //audioPlayer?.delegate = self
+    }
+    
+    //TODO:
+    func addAudio() {
+        view.endEditing(true)
+        //guard let _ = audioData else { return }
+        let title = audioTitleTextField.text ?? "Audio Experience"
+        if geoSwitch.isOn {
+            if customCoordinate != nil {
+                           
+                           ExperienceController.shared.createExperience(title: title, mediaType: .image, geotag: customCoordinate)
+                           print("Executed in the block that see's customCoordinate is not nil")
+                           
+                           self.navigationController?.popToRootViewController(animated: true)
+                           return
+            }
+       LocationHelper.shared.getCurrentLocation { (coordinate) in
+                      ExperienceController.shared.createExperience(title: title, mediaType: .audio, geotag: coordinate)
+        self.delegate?.addAudioButtonTapped()
+        self.navigationController?.popToRootViewController(animated: true) }
+        
+        
+        } else {
+            ExperienceController.shared.createExperience(title: title, mediaType: .audio, geotag: nil)
+            self.delegate?.addAudioButtonTapped()
+               self.navigationController?.popToRootViewController(animated: true) }
+            
+            
+        }
+        
+    
+    
+    
+    func playBackRecording() {
+        
+    }
+    
+  func startTimer() {
+   
+      stopTimer()
+    timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true, block: { [weak self] (timer) in
+        
+        guard let self = self, let audioPlayer = self.audioPlayer else {return}
+          self.updateViews()
+        
+        self.audioPlayer?.updateMeters()
+      self.audioVisualizer.addValue(decibelValue: audioPlayer.averagePower(forChannel: 0))
+        
+      })
+  }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+ 
+    
+    var isPlaying: Bool {
+        audioPlayer?.isPlaying ?? false
+    }
+    
+    func play() {
+        audioPlayer?.play()
+        startTimer()
+        updateViews()
+    }
+    
+    func pause() {
+        audioPlayer?.pause()
+        stopTimer()
+        updateViews()
+         
+    }
+    
+    func playPause() {
+        if isPlaying {
+             pause()
+        } else {
+            play()
+        }
+    }
+    
+    
+    
+    // MARK: - Recording
+    
+    var isRecording: Bool {
+        audioRecorder?.isRecording ?? false
+    }
+    
+ func startRecording() {
+     recordingURL = makeNewRecordingURL()
+     if let recordingURL = recordingURL {
+         print("URL: \(recordingURL)")
+         // 44.1 KHz = FM quality audio
+         let format = AVAudioFormat(standardFormatWithSampleRate: 44_100, channels: 1)! // FIXME: can fail
+         audioRecorder = try! AVAudioRecorder(url: recordingURL, format: format) // FIXME: Deal with errors fatalError()
+        
+        audioRecorder?.record()
+        audioRecorder?.delegate = self
+        updateViews()
+     }
+ }
+    
+    func requestRecordPermission() {
+        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+            DispatchQueue.main.async {
+                guard granted == true else {
+                    fatalError("We need microphone access")
+                }
+                self.startRecording()
+            }
+        }
+    }
+    
+    func stopRecording() {
+        audioRecorder?.stop()
+        updateViews()
+    }
+    
+ func toggleRecording() {
+     if isRecording {
+        stopRecording()
+     } else {
+        requestRecordPermission()
+     }
+ }
+    
+ func makeNewRecordingURL() -> URL {
+     let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+     let name = ISO8601DateFormatter.string(from: Date(), timeZone: .current, formatOptions: [.withInternetDateTime])
+     let url = documents.appendingPathComponent(name).appendingPathExtension("caf")
+     return url
+ }
+    
+    // MARK: - Actions
+    
+    @IBAction func togglePlayback(_ sender: Any) {
+        playPause()
+        
+    }
+    
+    @IBAction func updateCurrentTime(_ sender: UISlider) {
+        
+    }
+    
+    @IBAction func toggleRecording(_ sender: Any) {
+        toggleRecording()
+    }
+}
+
+
+
+
+extension AudioViewController:AVAudioRecorderDelegate {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag == true {
+            //update player to load the new file
+            
+            if let recordingURL = recordingURL {
+                audioPlayer = try? AVAudioPlayer(contentsOf: recordingURL)
+            }
+        }
+    }
+    
+    func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
+        if let error = error {
+            print("AudioRecorder error: \(error)")
+        }
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        if let error = error {
+            print("Audio Player Error: \(error)")
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
 
 }

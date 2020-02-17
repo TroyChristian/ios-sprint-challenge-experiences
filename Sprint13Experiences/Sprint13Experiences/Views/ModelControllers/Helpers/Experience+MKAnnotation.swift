@@ -13,6 +13,8 @@ extension Experience: MKAnnotation {
         guard let geotag = geotag else { return CLLocationCoordinate2D()}
         return CLLocationCoordinate2D(latitude:geotag.latitude, longitude: geotag.longitude)
     }
+    
+    
     var experienceTitle: String? {
         title 
     }
