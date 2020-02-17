@@ -63,7 +63,6 @@
                                 <state key="normal" title="Button" image="Record"/>
                                 <connections>
                                     <action selector="recordButtonPressed:" destination="ACL-Bb-NkN" eventType="touchUpInside" id="TaF-pv-5IY"/>
-                                    <action selector="recordButtonTapped:" destination="ACL-Bb-NkN" eventType="touchUpInside" id="YrT-jT-I9v"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add GeoTag?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpN-Uy-s8a">

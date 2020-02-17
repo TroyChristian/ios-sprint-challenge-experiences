@@ -281,6 +281,33 @@ class ImageViewController:UIViewController {
       }
     }
     
+    func chooseLocation() {
+        let alert = UIAlertController(title: "Custom Location", message: "Input the latitude and longitude of where your experience took place.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title:"Cancel", style: .cancel, handler: nil))
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Latitude: "})
+        
+        alert.addTextField(configurationHandler: { textField in
+        textField.placeholder = "Longitude: "})
+        
+        alert.addAction(UIAlertAction(title: "Set Custom Location", style: .default, handler: { action in
+            
+            if let latitude = (alert.textFields?.first?.text),
+             let  longitude = (alert.textFields?[1].text) {
+               var lat = Double(latitude)
+              var  long = Double(longitude)
+                
+                LocationHelper.shared.getCustomLocation(latitude:lat ?? 33.3 , longitude: long ?? 33.3
+                
+                )
+                
+            } else { return }
+        }
+        
+    }
+    
 
 }
 extension ImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
