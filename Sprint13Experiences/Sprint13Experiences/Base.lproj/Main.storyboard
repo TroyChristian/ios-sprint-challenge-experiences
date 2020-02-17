@@ -73,6 +73,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3px-t3-Qml">
                                 <rect key="frame" x="341" y="112" width="51" height="22"/>
+                                <connections>
+                                    <action selector="geoSwitchTapped:" destination="ACL-Bb-NkN" eventType="valueChanged" id="hcx-IO-vvh"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -236,6 +239,9 @@
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0my-CO-Uml">
                                 <rect key="frame" x="313" y="811" width="51" height="31"/>
+                                <connections>
+                                    <action selector="geoSwitchTapped:" destination="T0c-Gh-jpx" eventType="valueChanged" id="wHi-sW-RZR"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add GeoTag? :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lom-hp-Lpr">
                                 <rect key="frame" x="20" y="816" width="110" height="21"/>
@@ -358,6 +364,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-FQ-Dyq">
                                 <rect key="frame" x="310" y="781" width="51" height="31"/>
                                 <connections>
+                                    <action selector="geoSwitchTapped:" destination="DCM-yZ-of5" eventType="valueChanged" id="gKG-Su-hpC"/>
                                     <action selector="geoTagSwitched:" destination="MI3-zJ-ekU" eventType="valueChanged" id="8T5-L4-7Fk"/>
                                 </connections>
                             </switch>
@@ -417,6 +424,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeU-Fx-FTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="DCM-yZ-of5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1781.1594202898552" y="-460.04464285714283"/>
         </scene>

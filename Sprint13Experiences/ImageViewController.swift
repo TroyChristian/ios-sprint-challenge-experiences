@@ -254,7 +254,7 @@ class ImageViewController:UIViewController {
         }
         
         if geoSwitch.isOn {
-          print("line 257: custom coordinate is \(customCoordinate)")
+          
             if customCoordinate != nil {
                 
                 ExperienceController.shared.createExperience(title: title, mediaType: .image, geotag: customCoordinate)
