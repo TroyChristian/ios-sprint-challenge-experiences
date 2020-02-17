@@ -53,7 +53,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-bQ-0Jf" customClass="CameraPreviewView" customModule="Sprint13Experiences" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="20" y="200" width="374" height="447"/>
+                                <rect key="frame" x="77" y="278" width="260" height="308"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPr-hq-0sa">
@@ -79,21 +79,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="FfF-CZ-U4d" firstAttribute="top" secondItem="3px-t3-Qml" secondAttribute="bottom" constant="24" id="3Of-Nm-ftx"/>
+                            <constraint firstItem="b5g-bQ-0Jf" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="77" id="4de-r5-gpP"/>
                             <constraint firstItem="WpN-Uy-s8a" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="20" id="ABC-8Q-2Nv"/>
                             <constraint firstItem="FfF-CZ-U4d" firstAttribute="top" secondItem="WpN-Uy-s8a" secondAttribute="bottom" constant="24" id="AK9-Ef-b7A"/>
                             <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="3px-t3-Qml" secondAttribute="trailing" constant="24" id="BG1-eO-A4O"/>
                             <constraint firstItem="FfF-CZ-U4d" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="20" id="HOg-iA-fIZ"/>
-                            <constraint firstItem="b5g-bQ-0Jf" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="20" id="L0o-OX-AXg"/>
+                            <constraint firstAttribute="bottom" secondItem="b5g-bQ-0Jf" secondAttribute="bottom" constant="310" id="Hvd-OU-Vu5"/>
                             <constraint firstItem="WpN-Uy-s8a" firstAttribute="top" secondItem="bKd-FV-PoC" secondAttribute="top" constant="24" id="Ng9-yw-HGM"/>
+                            <constraint firstItem="b5g-bQ-0Jf" firstAttribute="top" secondItem="FfF-CZ-U4d" secondAttribute="bottom" constant="86" id="REN-Qj-aeM"/>
+                            <constraint firstItem="b5g-bQ-0Jf" firstAttribute="top" secondItem="FfF-CZ-U4d" secondAttribute="bottom" constant="86" id="dss-Mh-wUV"/>
                             <constraint firstItem="bKd-FV-PoC" firstAttribute="bottom" secondItem="YPr-hq-0sa" secondAttribute="bottom" constant="49" id="egP-sY-CJP"/>
                             <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="FfF-CZ-U4d" secondAttribute="trailing" constant="20" id="enO-cW-FjH"/>
-                            <constraint firstItem="b5g-bQ-0Jf" firstAttribute="top" secondItem="FfF-CZ-U4d" secondAttribute="bottom" constant="8" id="fGf-Xb-RPn"/>
                             <constraint firstItem="FfF-CZ-U4d" firstAttribute="top" secondItem="bKd-FV-PoC" secondAttribute="top" constant="70" id="fKq-ot-16N"/>
                             <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="YPr-hq-0sa" secondAttribute="trailing" constant="149" id="hWw-Mz-Z8C"/>
                             <constraint firstItem="3px-t3-Qml" firstAttribute="top" secondItem="bKd-FV-PoC" secondAttribute="top" constant="24" id="iN3-kH-OQM"/>
-                            <constraint firstItem="YPr-hq-0sa" firstAttribute="top" secondItem="b5g-bQ-0Jf" secondAttribute="bottom" constant="50" id="l4F-OE-SzA"/>
+                            <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="b5g-bQ-0Jf" secondAttribute="trailing" constant="77" id="mB2-pr-9c8"/>
                             <constraint firstItem="YPr-hq-0sa" firstAttribute="leading" secondItem="bKd-FV-PoC" secondAttribute="leading" constant="149" id="q67-C5-dJc"/>
-                            <constraint firstItem="bKd-FV-PoC" firstAttribute="trailing" secondItem="b5g-bQ-0Jf" secondAttribute="trailing" constant="20" id="qih-Wh-bED"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bKd-FV-PoC"/>
                     </view>
