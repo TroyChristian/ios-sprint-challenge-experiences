@@ -52,7 +52,14 @@ class LocationHelper: NSObject {
             completion(coordinate)
         }
     }
+    
+    func getCustomLocation(latitude: Double, longitude: Double) -> CLLocationCoordinate2D
+    {
+         return CLLocationCoordinate2D(latitude:latitude, longitude:longitude)
+    }
 }
+
+
 
 extension LocationHelper: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

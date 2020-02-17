@@ -34,11 +34,13 @@ class MapViewController: UIViewController {
             self.mapView.addAnnotations(experiences)
         }
         
-        guard let experience = experiences.first else { return }
-        
-        let span = MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
-        let region = MKCoordinateRegion(center: experience.coordinate, span: span)
-        self.mapView.setRegion(region, animated: true)
+       // guard let experience = experiences.first else { return }
+//
+//        let span = MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
+//        let region = MKCoordinateRegion(center: experience.coordinate, span: span)
+//        self.mapView.setRegion(region, animated: true)
+            
+            mapView.addAnnotations(experiences)
     }
         else { return }
 
