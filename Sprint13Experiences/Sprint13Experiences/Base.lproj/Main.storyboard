@@ -357,6 +357,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-FQ-Dyq">
                                 <rect key="frame" x="310" y="781" width="51" height="31"/>
+                                <connections>
+                                    <action selector="geoTagSwitched:" destination="MI3-zJ-ekU" eventType="valueChanged" id="8T5-L4-7Fk"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ8-Bl-PqX">
                                 <rect key="frame" x="149" y="303" width="116" height="30"/>

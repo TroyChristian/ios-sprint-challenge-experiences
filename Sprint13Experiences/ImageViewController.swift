@@ -30,6 +30,7 @@ class ImageViewController:UIViewController {
     var delegate: ImageViewControllerDelegate?
     private var context = CIContext(options:nil)
     var imageHeightConstraint: NSLayoutConstraint!
+    var customCoordinate: CLLocationCoordinate2D?
    
     //MARK: Variables
     private var originalImage: UIImage? {
@@ -83,6 +84,9 @@ class ImageViewController:UIViewController {
         addImage() 
     }
     
+    @IBAction func geoTagSwitched(_ sender: Any) {
+        chooseLocation()
+    }
     
     
     @IBAction func chooseImage(_ sender: Any) {
@@ -246,6 +250,15 @@ class ImageViewController:UIViewController {
         }
         
         if geoSwitch.isOn {
+          
+            if customCoordinate != nil {
+                ExperienceController.shared.createExperience(title: title, mediaType: .image, geotag: customCoordinate)
+                print("Executed in the block that see's customCoordinate is not nil")
+                
+                self.navigationController?.popToRootViewController(animated: true)
+                return
+                
+            }
             LocationHelper.shared.getCurrentLocation { (coordinate) in
                 ExperienceController.shared.createExperience(title: title, mediaType: .image, geotag: coordinate)
                 self.navigationController?.popToRootViewController(animated: true)
@@ -284,7 +297,7 @@ class ImageViewController:UIViewController {
     }
     
     func chooseLocation() {
-        let alert = UIAlertController(title: "Custom Location", message: "Input the latitude and longitude of where your experience took place.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Custom Location", message: "Input the latitude and longitude of where your experience took place. Or press cancel to automatically use your current location", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title:"Cancel", style: .cancel, handler: nil))
         
@@ -296,18 +309,20 @@ class ImageViewController:UIViewController {
         
         alert.addAction(UIAlertAction(title: "Set Custom Location", style: .default, handler: { action in
             
-            if let latitude = (alert.textFields?.first?.text),
+            if let latitude = (alert.textFields?.first?.text) ,
              let  longitude = (alert.textFields?[1].text) {
-               var lat = Double(latitude)
-              var  long = Double(longitude)
+                let lat = Double(latitude)
+                let  long = Double(longitude)
+               print("\(lat) \(long)")
                 
-                LocationHelper.shared.getCustomLocation(latitude:lat ?? 33.3 , longitude: long ?? 33.3
+                self.customCoordinate =  LocationHelper.shared.getCustomLocation(latitude:lat ?? 33.3 , longitude: long ?? 33.3
                 
                 )
+                print("\(self.customCoordinate)")
                 
             } else { return }
         }))
-       
+        self.present(alert, animated:true, completion: nil)
     }
     
 

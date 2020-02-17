@@ -57,9 +57,10 @@ class LocationHelper: NSObject {
     {
          return CLLocationCoordinate2D(latitude:latitude, longitude:longitude)
     }
+
+
+
 }
-
-
 
 extension LocationHelper: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
