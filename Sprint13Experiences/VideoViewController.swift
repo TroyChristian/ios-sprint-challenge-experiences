@@ -74,9 +74,16 @@ class VideoViewController: UIViewController {
         captureSession.stopRunning()
     }
         
-    func updateViews() {
-        recordButton.isSelected = fileOutput.isRecording
-    }
+//    func updateViews() {
+//        recordButton.isSelected = fileOutput.isRecording
+//    }
+    
+    private func updateViews() {
+          guard isViewLoaded else { return }
+          let isRecording = fileOutput.isRecording
+          let recordButtonImage = isRecording ? "Stop" : "Record"
+          recordButton.setImage(UIImage(named: recordButtonImage), for: .normal)
+      }
         
     
     
