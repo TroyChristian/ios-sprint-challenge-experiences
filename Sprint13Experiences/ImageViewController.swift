@@ -30,7 +30,11 @@ class ImageViewController:UIViewController {
     var delegate: ImageViewControllerDelegate?
     private var context = CIContext(options:nil)
     var imageHeightConstraint: NSLayoutConstraint!
-    var customCoordinate: CLLocationCoordinate2D?
+   var customCoordinate: CLLocationCoordinate2D?
+    //{
+//        if let customCoordinate = self.customCoordinate {
+//               return CLLocationCoordinate2D(latitude:customCoordinate.latitude, longitude: customCoordinate.longitude)
+//        } }
    
     //MARK: Variables
     private var originalImage: UIImage? {
@@ -250,8 +254,9 @@ class ImageViewController:UIViewController {
         }
         
         if geoSwitch.isOn {
-          
+          print("line 257: custom coordinate is \(customCoordinate)")
             if customCoordinate != nil {
+                
                 ExperienceController.shared.createExperience(title: title, mediaType: .image, geotag: customCoordinate)
                 print("Executed in the block that see's customCoordinate is not nil")
                 
@@ -311,14 +316,16 @@ class ImageViewController:UIViewController {
             
             if let latitude = (alert.textFields?.first?.text) ,
              let  longitude = (alert.textFields?[1].text) {
-                let lat = Double(latitude)
-                let  long = Double(longitude)
-               print("\(lat) \(long)")
+             guard   let lat = CLLocationDegrees(latitude),
+                let  long = CLLocationDegrees(longitude) else {print( "Returning line 320.") ; return}
+               
+                print("322 \(lat), \(long)")
+//           
                 
-                self.customCoordinate =  LocationHelper.shared.getCustomLocation(latitude:lat ?? 33.3 , longitude: long ?? 33.3
+                self.customCoordinate = LocationHelper.shared.getCustomLocation(latitude:lat ?? 33.3 , longitude: long ?? 33.3)
                 
-                )
-                print("\(self.customCoordinate)")
+                
+               
                 
             } else { return }
         }))

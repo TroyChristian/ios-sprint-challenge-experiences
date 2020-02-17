@@ -27,18 +27,18 @@ class MapViewController: UIViewController {
     }
     
     func getExperiences() {
-        var experiences = ExperienceController.shared.experiences
+        let experiences = ExperienceController.shared.experiences
         if  experiences.count != 0 {
         
         DispatchQueue.main.async {
             self.mapView.addAnnotations(experiences)
         }
         
-       // guard let experience = experiences.first else { return }
-//
-//        let span = MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
-//        let region = MKCoordinateRegion(center: experience.coordinate, span: span)
-//        self.mapView.setRegion(region, animated: true)
+        guard let experience = experiences.first else { return }
+
+        let span = MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100)
+       let region = MKCoordinateRegion(center: experience.coordinate, span: span)
+       self.mapView.setRegion(region, animated: true)
             
             mapView.addAnnotations(experiences)
     }
@@ -59,10 +59,9 @@ func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnota
            fatalError("Only Experience objects are supported right now")
        }
        
-       guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "ExperienceView") as? MKMarkerAnnotationView else {
-           fatalError("Missing a registered annotationView")
-    }
-    
+  guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "ExperienceView") as? MKMarkerAnnotationView else {
+          fatalError("Missing a registered annotationView")
+   }
     return annotationView
 }
 }
