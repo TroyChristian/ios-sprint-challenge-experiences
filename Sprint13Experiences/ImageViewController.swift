@@ -55,6 +55,8 @@ class ImageViewController:UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
          setImageViewHeight(with: 1.0)
+        
+        imageTitleTextField.delegate = self as? UITextFieldDelegate
     }
     
     
@@ -304,8 +306,8 @@ class ImageViewController:UIViewController {
                 )
                 
             } else { return }
-        }
-        
+        }))
+       
     }
     
 
@@ -326,5 +328,10 @@ extension ImageViewController: UIImagePickerControllerDelegate, UINavigationCont
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

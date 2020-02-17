@@ -57,6 +57,7 @@ class VideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        videoTitleTextField.delegate = self as? UITextFieldDelegate
 
         // Resize camera preview to fill the entire screen
         cameraView.videoPlayerView.videoGravity = .resizeAspectFill
@@ -237,6 +238,11 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
          playVideo(url:outputFileURL)
         
     }
+    
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+             textField.resignFirstResponder()
+             return true
+         }
 }
 
 

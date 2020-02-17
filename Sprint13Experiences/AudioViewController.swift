@@ -82,6 +82,7 @@ class AudioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        audioTitleTextField.delegate = self as? UITextFieldDelegate
         
        
         timeElapsedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeElapsedLabel.font.pointSize,
@@ -290,6 +291,11 @@ extension AudioViewController:AVAudioRecorderDelegate {
         if let error = error {
             print("Audio Player Error: \(error)")
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     
